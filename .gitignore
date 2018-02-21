@@ -1,0 +1,32 @@
+ignore
+.vagrant
+logs
+target
+tmp
+dist
+.idea
+/out
+.idea_modules
+.classpath
+.project
+/RUNNING_PID
+.settings
+.DS_Store
+integration/project/build.properties
+
+# hidden cross project folders
+shared/.js
+shared/.jvm
+
+# temp files
+.~*
+*~
+*.orig
+*.sc
+
+# eclipse
+.scala_dependencies
+.buildpath
+.target
+journal
+snapshots

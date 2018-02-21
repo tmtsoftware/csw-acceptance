@@ -13,7 +13,7 @@ lazy val aggregatedProjects: Seq[ProjectReference] = Seq(
   `command`
 )
 
-lazy val `csw-deploy` = project
+lazy val `csw-acceptance` = project
   .in(file("."))
   .aggregate(aggregatedProjects: _*)
 

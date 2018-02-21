@@ -1,9 +1,24 @@
-package csw.location.runner
+package csw.logging.runner
+
+import java.net.URLClassLoader
 
 import org.scalatest.tools.Runner
 
 object Run {
   def main(args: Array[String]): Unit = {
-    Runner.main(args)
+
+    val uRLs = getClass.getClassLoader
+      .asInstanceOf[URLClassLoader]
+      .getURLs
+
+    val testJarsRunpath = uRLs.map(_.getPath).find(x ⇒ x.contains("csw-logging") && x.contains("tests.jar")).getOrElse("")
+
+    val params = Array("-o", "-l", "csw.commons.tags.FileSystemSensitive", "-R", testJarsRunpath)
+
+    println("=" * 100)
+    println(s"Running tests from jar: [$testJarsRunpath]")
+    println("=" * 100)
+
+    Runner.main(params)
   }
 }

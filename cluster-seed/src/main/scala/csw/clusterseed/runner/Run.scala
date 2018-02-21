@@ -14,7 +14,7 @@ object Run {
       .find(x ⇒ x.contains("csw-cluster-seed") && x.contains("tests.jar"))
       .getOrElse("")
 
-    val params = Array("-o", "-l", "csw.commons.tags.ClasspathSensitive", "-R", testJarsRunpath)
+    val params = Array("-o", "-l", "csw.commons.tags.FileSystemSensitive", "-R", testJarsRunpath)
 
     println("=" * 100)
     println(s"Running tests from jar: [$testJarsRunpath]")

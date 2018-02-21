@@ -63,7 +63,8 @@ object Dependencies {
   val ConfigClient: Seq[ModuleID] = Seq(
     Libs.`scalatest`,
     CSW.`csw-config-client-tests`,
-    CSW.`csw-config-client`
+    CSW.`csw-config-client`,
+    CSW.`csw-config-server-tests`
   ) ++ TestDependencies ++ AllCswLibs
 
   val ConfigClientCli: Seq[ModuleID] = Seq(

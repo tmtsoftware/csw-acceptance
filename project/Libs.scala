@@ -13,7 +13,7 @@ object Libs {
 }
 
 object CSW {
-  val Version = "0.1.2+1364-4c3400e9"
+  val Version: String = (sys.env ++ sys.props).getOrElse("DEV_VERSION", "0.1.2+1364-4c3400e9")
 
   val `csw-location`       = "org.tmt" %% "csw-location" % Version
   val `csw-location-tests` = "org.tmt" %% "csw-location" % Version classifier "tests"

@@ -7,13 +7,22 @@ import org.scalatest.tools.Runner
 object Run {
   def main(args: Array[String]): Unit = {
 
-    val uRLs = getClass.getClassLoader
+    val testJarsRunpath = getClass.getClassLoader
       .asInstanceOf[URLClassLoader]
       .getURLs
+      .map(_.getPath)
+      .find(x ⇒ x.contains("csw-logging") && x.contains("tests.jar"))
+      .getOrElse("")
 
-    val testJarsRunpath = uRLs.map(_.getPath).find(x ⇒ x.contains("csw-logging") && x.contains("tests.jar")).getOrElse("")
-
-    val params = Array("-o", "-l", "csw.commons.tags.FileSystemSensitive", "-R", testJarsRunpath)
+    val params = Array(
+      "-o",
+      "-l",
+      "csw.commons.tags.FileSystemSensitive",
+      "-l",
+      "csw.commons.tags.LoggingSystemSensitive",
+      "-R",
+      testJarsRunpath
+    )
 
     println("=" * 100)
     println(s"Running tests from jar: [$testJarsRunpath]")

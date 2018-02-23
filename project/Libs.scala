@@ -13,7 +13,15 @@ object Libs {
 }
 
 object CSW {
-  val Version: String = (sys.env ++ sys.props).getOrElse("DEV_VERSION", "0.1.2+1364-4c3400e9")
+  val Version: String = {
+    val env = sys.env ++ sys.props
+    env.get("BUILD_ENV") match {
+      case Some("PROD") ⇒ env.getOrElse("RELEASE_VERSION", "")
+      case Some("DEV")  ⇒ env.getOrElse("DEV_VERSION", "0.1.2+1382-e9c8523b+20180223-1035")
+      // FIXME: below case will run acceptance tests with the Dev Version if BUILD_ENV=PROD is not set in release pipeline/machine
+      case _ ⇒ env.getOrElse("DEV_VERSION", "0.1.2+1382-e9c8523b+20180223-1035")
+    }
+  }
 
   val `csw-location`       = "org.tmt" %% "csw-location" % Version
   val `csw-location-tests` = "org.tmt" %% "csw-location" % Version classifier "tests"

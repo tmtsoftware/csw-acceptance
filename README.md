@@ -23,10 +23,11 @@ Run application from each module takes following command line arguments:
 
 ## Pre-requisite (Environment Variable Setup)
 Before running any tests, make sure that you have correct env variables setup based on below table:
+
 | Env var | Value | Description |
-| ------  | ----- | ------ |
-| BUILD_ENV | PROD | If this is set, then Env Var RELEASE_VERSION is expected to be set|
-| BUILD_ENV | DEV | If this is set, then Env Var DEV_VERSION is expected to be set|
+|  -----  | ----- |    -----    |
+| BUILD_ENV | PROD | If this is set, then Env Var RELEASE_VERSION is expected to be set |
+| BUILD_ENV | DEV | If this is set, then Env Var DEV_VERSION is expected to be set |
 | RELEASE_VERSION | Ex. 0.1.2+1382-e9c8523b+20180223-1035 | When BUILD_ENV=PROD then cw-prod libraries with this version will be pulled |
 | DEV_VERSION | Ex. 0.1-SNAPSHOT | When BUILD_ENV=DEV then cw-prod libraries with this version will be pulled |
 

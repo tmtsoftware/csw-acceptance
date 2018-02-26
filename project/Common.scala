@@ -30,7 +30,7 @@ object Common extends AutoPlugin {
       "-Xlint",
       "-Yno-adapted-args",
       "-Ywarn-dead-code",
-      "-Xfuture",
+      "-Xfuture"
 //      "-Xprint:typer"
     ),
     javacOptions in (Compile, doc) ++= Seq("-Xdoclint:none"),

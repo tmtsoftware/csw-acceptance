@@ -1,4 +1,4 @@
-package csw.configserver.runner
+package csw.locationagent.runner
 
 import java.net.URLClassLoader
 import java.util.jar.JarFile
@@ -13,7 +13,7 @@ object Run {
     .asInstanceOf[URLClassLoader]
     .getURLs
     .map(_.getPath)
-    .find(x ⇒ x.contains("csw-config-server") && x.contains("tests.jar"))
+    .find(x ⇒ x.contains("csw-location-agent") && x.contains("tests.jar"))
     .getOrElse("")
 
   def main(args: Array[String]): Unit = {

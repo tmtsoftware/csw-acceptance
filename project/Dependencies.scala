@@ -6,10 +6,12 @@ object Dependencies {
     Libs.`scalatest`,
     Libs.`junit`,
     Libs.`junit-interface`,
+    Libs.`junit-toolbox`,
+    Libs.`junit-classpathsuite`,
     Libs.`mockito-core`,
+    Libs.`gson`,
     Akka.`akka-stream-testkit`,
     Akka.`akka-multi-node-testkit`,
-    Libs.`gson`,
     CSW.`csw-commons-tests`
   )
 
@@ -88,7 +90,8 @@ object Dependencies {
   val Messages: Seq[ModuleID] = Seq(
     Libs.`scalatest`,
     CSW.`csw-messages-tests`,
-    CSW.`csw-messages`
+    CSW.`csw-messages`,
+    Libs.`junit-classpathsuite`
   ) ++ TestDependencies ++ AllCswLibs
 
   val Command: Seq[ModuleID] = Seq(

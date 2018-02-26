@@ -1,10 +1,9 @@
-package csw.configserver.runner
+package csw.messages.runner
 
 import java.net.URLClassLoader
 import java.util.jar.JarFile
 
 import org.scalatest.tools.Runner
-
 import scala.collection.JavaConverters._
 
 object Run {
@@ -13,7 +12,7 @@ object Run {
     .asInstanceOf[URLClassLoader]
     .getURLs
     .map(_.getPath)
-    .find(x ⇒ x.contains("csw-config-server") && x.contains("tests.jar"))
+    .find(x ⇒ x.contains("csw-messages") && x.contains("tests.jar"))
     .getOrElse("")
 
   def main(args: Array[String]): Unit = {

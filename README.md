@@ -31,4 +31,9 @@ Before running any tests, make sure that you have correct env variables setup ba
 | RELEASE_VERSION | Ex. 0.1.2+1382-e9c8523b+20180223-1035 | When BUILD_ENV=PROD then cw-prod libraries with this version will be pulled |
 | DEV_VERSION | Ex. 0.1-SNAPSHOT | When BUILD_ENV=DEV then cw-prod libraries with this version will be pulled |
 
-`run-all.sh` : This script will run both scala and java tests from all the projects.
+
+## Running Tests
+1. `sbt cluster-seed/run` : Runs scala and java tests from cluster-seed
+2. `sbt "cluster-seed/run -java"` : Runs java tests from cluster-seed
+3. `sbt "cluster-seed/run -scala"` : Runs scala tests from cluster-seed
+4. `run-all.sh` : This script runs both scala and java tests from all the projects.

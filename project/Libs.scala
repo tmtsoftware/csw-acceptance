@@ -3,15 +3,13 @@ import sbt._
 object Libs {
   val ScalaVersion = "2.12.4"
 
-  val `scalatest`                = "org.scalatest"                %% "scalatest"                % "3.0.5" //Apache License 2.0
-  val `junit`                    = "junit"                        % "junit"                     % "4.12" //Eclipse Public License 1.0
-  val `junit-interface`          = "com.novocode"                 % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
-  val `mockito-core`             = "org.mockito"                  % "mockito-core"              % "2.15.0" //MIT License
-  val `scalatest-embedded-kafka` = "net.manub"                    %% "scalatest-embedded-kafka" % "1.0.0"
-  val `embedded-redis`           = "com.github.sebruck"           %% "scalatest-embedded-redis" % "0.3.0"
-  val `gson`                     = "com.google.code.gson"         % "gson"                      % "2.8.2" //Apache 2.0
-  val `junit-toolbox`            = "com.googlecode.junit-toolbox" % "junit-toolbox"             % "2.4"
-  val `junit-classpathsuite`     = "io.takari.junit"              % "takari-cpsuite"            % "1.2.7"
+  val `scalatest`                = "org.scalatest"        %% "scalatest"                % "3.0.5" //Apache License 2.0
+  val `junit`                    = "junit"                % "junit"                     % "4.12" //Eclipse Public License 1.0
+  val `junit-interface`          = "com.novocode"         % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
+  val `mockito-core`             = "org.mockito"          % "mockito-core"              % "2.15.0" //MIT License
+  val `scalatest-embedded-kafka` = "net.manub"            %% "scalatest-embedded-kafka" % "1.0.0"
+  val `embedded-redis`           = "com.github.sebruck"   %% "scalatest-embedded-redis" % "0.3.0"
+  val `gson`                     = "com.google.code.gson" % "gson"                      % "2.8.2" //Apache 2.0
 
 }
 

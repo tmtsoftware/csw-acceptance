@@ -66,15 +66,17 @@ object Run {
       .filter(x ⇒ x.split("\\.").last.matches("J[A-Z].*") && x.endsWith("Test"))
       .flatMap(x ⇒ Array("-j", x))
 
-    Array(
-      "-o",
-      "-l",
-      "csw.commons.tags.FileSystemSensitive",
-      "-l",
-      "csw.commons.tags.LoggingSystemSensitive"
-    ) ++
-    junitTests ++
-    Array("-R", testJarsRunpath)
+    if (junitTests.isEmpty) Array.empty[String]
+    else
+      Array(
+        "-o",
+        "-l",
+        "csw.commons.tags.FileSystemSensitive",
+        "-l",
+        "csw.commons.tags.LoggingSystemSensitive"
+      ) ++
+      junitTests ++
+      Array("-R", testJarsRunpath)
   }
 
   private def printReport(msg: String): Unit = {
@@ -84,7 +86,9 @@ object Run {
   }
 
   private def runTests(msg: String, params: Array[String]): Boolean = {
-    printReport(msg)
-    Runner.run(params)
+    if (!params.isEmpty) {
+      printReport(msg)
+      Runner.run(params)
+    } else true
   }
 }

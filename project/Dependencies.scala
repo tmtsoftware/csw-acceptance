@@ -79,7 +79,7 @@ object Dependencies {
   val Messages: Seq[ModuleID] = Seq(
     CSW.`csw-messages-tests`,
     CSW.`csw-messages`
-  ) ++ AllCswLibs
+  ) ++ TestDependencies ++ AllCswLibs
 
   val Command: Seq[ModuleID] = Seq(
     CSW.`csw-command-tests`,

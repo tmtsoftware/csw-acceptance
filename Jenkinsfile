@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/kpritam/csw-acceptance.git'
+                git 'https://github.com/tmtsoftware/csw-acceptance.git'
             }
         }
         stage('Acceptance Test') {

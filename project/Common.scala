@@ -11,13 +11,13 @@ object Common extends AutoPlugin {
   val detectCycles: SettingKey[Boolean] = settingKey[Boolean]("is cyclic check enabled?")
 
   override lazy val projectSettings: Seq[Setting[_]] = Seq(
-    organization := "kpritam",
-    organizationName := "kpritam",
+    organization := "org.tmt",
+    organizationName := "TMT Org",
     scalaVersion := Libs.ScalaVersion,
     concurrentRestrictions in Global += Tags.limit(Tags.All, 1),
-    homepage := Some(url("https://github.com/kpritam/csw-deploy")),
+    homepage := Some(url("https://github.com/tmtsoftware/csw-acceptance")),
     scmInfo := Some(
-      ScmInfo(url("https://github.com/kpritam/csw-deploy"), "git@github.com:kpritam/csw-deploy.git")
+      ScmInfo(url("https://github.com/tmtsoftware/csw-acceptance"), "git@github.com:tmtsoftware/csw-acceptance.git")
     ),
     licenses := Seq(("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))),
     scalacOptions ++= Seq(
@@ -41,7 +41,7 @@ object Common extends AutoPlugin {
       // -a Show stack traces and exception class name for AssertionErrors.
       Tests.Argument(TestFrameworks.JUnit, "-v", "-a")
     ),
-    resolvers += Resolver.url("twtmt-maven", url("http://dl.bintray.com/twtmt/maven/")),
+    resolvers += Resolver.bintrayRepo("twtmt", "maven"),
     version := {
       sys.props.get("prod.publish") match {
         case Some("true") => version.value

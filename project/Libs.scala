@@ -18,9 +18,9 @@ object CSW {
     val env = sys.env ++ sys.props
     env.get("BUILD_ENV") match {
       case Some("PROD") ⇒ env.getOrElse("RELEASE_VERSION", "")
-      case Some("DEV")  ⇒ env.getOrElse("DEV_VERSION", "0.1.2+1382-e9c8523b+20180223-1035")
+      case Some("DEV")  ⇒ env.getOrElse("DEV_VERSION", "0.4.0")
       // FIXME: below case will run acceptance tests with the Dev Version if BUILD_ENV=PROD is not set in release pipeline/machine
-      case _ ⇒ env.getOrElse("DEV_VERSION", "0.1.2+1382-e9c8523b+20180223-1035")
+      case _ ⇒ env.getOrElse("DEV_VERSION", "0.4.0")
     }
   }
 

@@ -21,6 +21,7 @@ pipeline {
                 sh "sbt location/run"
                 sh "sbt logging/run"
                 sh "sbt messages/run"
+                sh "sbt event-client/run"
             }
         }
     }

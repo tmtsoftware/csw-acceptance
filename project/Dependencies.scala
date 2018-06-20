@@ -8,8 +8,12 @@ object Dependencies {
     Libs.`junit-interface`,
     Libs.`mockito-core`,
     Libs.`gson`,
+    Libs.`scalatest-embedded-kafka`,
+    Libs.`embedded-redis`,
     Akka.`akka-stream-testkit`,
+    Akka.`akka-actor-testkit-typed`,
     Akka.`akka-multi-node-testkit`,
+    Libs.`testng`,
     CSW.`csw-commons-tests`
   )
 
@@ -25,7 +29,9 @@ object Dependencies {
     CSW.`csw-messages`,
     CSW.`csw-framework`,
     CSW.`csw-command`,
-    CSW.`csw-commons`
+    CSW.`csw-commons`,
+    CSW.`csw-event-api`,
+    CSW.`csw-event-client`
   )
 
   val ClusterSeed: Seq[ModuleID] = Seq(
@@ -73,6 +79,7 @@ object Dependencies {
 
   val Framework: Seq[ModuleID] = Seq(
     CSW.`csw-framework-tests`,
+    CSW.`csw-event-client-tests`,
     CSW.`csw-framework`
   ) ++ TestDependencies ++ AllCswLibs
 
@@ -84,6 +91,11 @@ object Dependencies {
   val Command: Seq[ModuleID] = Seq(
     CSW.`csw-command-tests`,
     CSW.`csw-command`
+  ) ++ TestDependencies ++ AllCswLibs
+
+  val EventClient: Seq[ModuleID] = Seq(
+    CSW.`csw-event-client-tests`,
+    CSW.`csw-event-client`
   ) ++ TestDependencies ++ AllCswLibs
 
   val CswRunner: Seq[ModuleID] = Seq(Libs.`scalatest`)

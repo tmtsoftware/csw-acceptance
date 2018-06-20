@@ -30,3 +30,5 @@ shared/.jvm
 .target
 journal
 snapshots
+.bloop
+test-output/

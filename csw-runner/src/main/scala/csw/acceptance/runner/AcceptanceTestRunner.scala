@@ -65,7 +65,7 @@ class AcceptanceTestRunner(testProjectName: String) {
       .filter(_.getName.endsWith(".class"))
       .map(entry ⇒ entry.getName.substring(0, entry.getName.length - 6).replace('/', '.'))
       .filter(x ⇒ x.split("\\.").last.matches("J[A-Z].*") && x.endsWith("Test"))
-      .filterNot(x ⇒ x.endsWith("JEventPublisherTest") || x.endsWith("JEventSubscriberTest")) // these are testng tests and are run as a part of scala tests.
+      .filterNot(x ⇒ x.endsWith("JEventPublisherTest") || x.endsWith("JEventSubscriberTest") || x.endsWith("JEventSubscriptionFrequencyTest")) // these are testng tests and are run as a part of scala tests.
       .flatMap(x ⇒ Array("-j", x))
 
     if (junitTests.isEmpty) Array.empty[String]

@@ -98,5 +98,11 @@ object Dependencies {
     CSW.`csw-event-client`
   ) ++ TestDependencies ++ AllCswLibs
 
+  val EventCli: Seq[ModuleID] = Seq(
+    CSW.`csw-event-cli-tests`,
+    CSW.`csw-event-cli`
+  ) ++ TestDependencies ++ AllCswLibs
+
+
   val CswRunner: Seq[ModuleID] = Seq(Libs.`scalatest`)
 }

@@ -102,6 +102,13 @@ lazy val `event-client` = project
     libraryDependencies ++= Dependencies.EventClient
   )
 
+lazy val `event-cli` = project
+  .enablePlugins(DeployApp)
+  .dependsOn(`csw-runner`)
+  .settings(
+    libraryDependencies ++= Dependencies.EventCli
+  )
+
 lazy val `csw-runner` = project
   .enablePlugins(DeployApp)
   .settings(

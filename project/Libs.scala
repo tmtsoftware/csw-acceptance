@@ -21,7 +21,7 @@ object CSW {
       case Some("PROD") ⇒ env.getOrElse("RELEASE_VERSION", "")
       case Some("DEV")  ⇒ env.getOrElse("DEV_VERSION", "0.4.0")
       // FIXME: below case will run acceptance tests with the Dev Version if BUILD_ENV=PROD is not set in release pipeline/machine
-      case _ ⇒ env.getOrElse("DEV_VERSION", "0.4.0")
+      case _ ⇒ env.getOrElse("DEV_VERSION", "0.1-SNAPSHOT")
     }
   }
 
@@ -63,6 +63,9 @@ object CSW {
 
   val `csw-event-client`       = "org.tmt" %% "csw-event-client" % Version
   val `csw-event-client-tests` = "org.tmt" %% "csw-event-client" % Version classifier "tests"
+
+  val `csw-event-cli`       = "org.tmt" %% "csw-event-cli" % Version
+  val `csw-event-cli-tests` = "org.tmt" %% "csw-event-cli" % Version classifier "tests"
 
   val `csw-event-api`       = "org.tmt" %% "csw-event-api" % Version
 }

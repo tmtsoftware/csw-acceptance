@@ -1,15 +1,15 @@
 import sbt._
 
 object Libs {
-  val ScalaVersion = "2.12.4"
+  val ScalaVersion = "2.12.6"
 
   val `scalatest`                = "org.scalatest"        %% "scalatest"                % "3.0.5" //Apache License 2.0
   val `junit`                    = "junit"                % "junit"                     % "4.12" //Eclipse Public License 1.0
   val `junit-interface`          = "com.novocode"         % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
-  val `mockito-core`             = "org.mockito"          % "mockito-core"              % "2.18.3" //MIT License
+  val `mockito-core`             = "org.mockito"          % "mockito-core"              % "2.21.0" //MIT License
   val `scalatest-embedded-kafka` = "net.manub"            %% "scalatest-embedded-kafka" % "1.1.0"
-  val `embedded-redis`           = "com.github.sebruck"   %% "scalatest-embedded-redis" % "0.3.0"
-  val `testng`                   = "org.testng"             % "testng"                        % "6.14.3"
+  val `embedded-redis`           = "com.github.kstyrc"    % "embedded-redis"            % "0.6"
+  val `testng`                   = "org.testng"           % "testng"                    % "6.14.3"
   val `gson`                     = "com.google.code.gson" % "gson"                      % "2.8.5" //Apache 2.0
 
 }
@@ -19,7 +19,7 @@ object CSW {
     val env = sys.env ++ sys.props
     env.get("BUILD_ENV") match {
       case Some("PROD") ⇒ env.getOrElse("RELEASE_VERSION", "")
-      case Some("DEV")  ⇒ env.getOrElse("DEV_VERSION", "0.4.0")
+      case Some("DEV")  ⇒ env.getOrElse("DEV_VERSION", "0.5.0-RC1")
       // FIXME: below case will run acceptance tests with the Dev Version if BUILD_ENV=PROD is not set in release pipeline/machine
       case _ ⇒ env.getOrElse("DEV_VERSION", "0.1-SNAPSHOT")
     }
@@ -67,14 +67,14 @@ object CSW {
   val `csw-event-cli`       = "org.tmt" %% "csw-event-cli" % Version
   val `csw-event-cli-tests` = "org.tmt" %% "csw-event-cli" % Version classifier "tests"
 
-  val `csw-event-api`       = "org.tmt" %% "csw-event-api" % Version
+  val `csw-event-api` = "org.tmt" %% "csw-event-api" % Version
 }
 
 object Akka {
-  val Version                   = "2.5.13" //all akka is Apache License 2.0
-  val `akka-stream-testkit`     = "com.typesafe.akka" %% "akka-stream-testkit" % Version
+  val Version                    = "2.5.13" //all akka is Apache License 2.0
+  val `akka-stream-testkit`      = "com.typesafe.akka" %% "akka-stream-testkit" % Version
   val `akka-actor-testkit-typed` = "com.typesafe.akka" %% "akka-actor-testkit-typed" % Version
-  val `akka-multi-node-testkit` = "com.typesafe.akka" %% "akka-multi-node-testkit" % Version
+  val `akka-multi-node-testkit`  = "com.typesafe.akka" %% "akka-multi-node-testkit" % Version
 }
 
 object AkkaHttp {

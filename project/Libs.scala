@@ -37,8 +37,8 @@ object CSW {
   val `csw-config-client`       = "org.tmt" %% "csw-config-client" % Version
   val `csw-config-client-tests` = "org.tmt" %% "csw-config-client" % Version classifier "tests"
 
-  val `csw-config-client-cli`       = "org.tmt" %% "csw-config-client-cli" % Version
-  val `csw-config-client-cli-tests` = "org.tmt" %% "csw-config-client-cli" % Version classifier "tests"
+  val `csw-config-cli`       = "org.tmt" %% "csw-config-cli" % Version
+  val `csw-config-cli-tests` = "org.tmt" %% "csw-config-cli" % Version classifier "tests"
 
   val `csw-logging`       = "org.tmt" %% "csw-logging" % Version
   val `csw-logging-tests` = "org.tmt" %% "csw-logging" % Version classifier "tests"

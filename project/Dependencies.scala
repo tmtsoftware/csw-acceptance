@@ -2,7 +2,7 @@ import sbt.librarymanagement.ModuleID
 
 object Dependencies {
 
-  val TestDependencies = Seq(
+  val TestDependencies: Seq[ModuleID] = Seq(
     Libs.`scalatest`,
     Libs.`junit`,
     Libs.`junit-interface`,
@@ -17,14 +17,14 @@ object Dependencies {
     CSW.`csw-commons-tests`
   )
 
-  val AllCswLibs = Seq(
+  val AllCswLibs: Seq[ModuleID] = Seq(
     CSW.`csw-cluster-seed`,
     CSW.`csw-location`,
     CSW.`csw-location-agent`,
     CSW.`csw-config-server`,
     CSW.`csw-config-api`,
     CSW.`csw-config-client`,
-    CSW.`csw-config-client-cli`,
+    CSW.`csw-config-cli`,
     CSW.`csw-logging`,
     CSW.`csw-messages`,
     CSW.`csw-framework`,
@@ -68,8 +68,8 @@ object Dependencies {
   ) ++ TestDependencies ++ AllCswLibs
 
   val ConfigClientCli: Seq[ModuleID] = Seq(
-    CSW.`csw-config-client-cli-tests`,
-    CSW.`csw-config-client-cli`
+    CSW.`csw-config-cli-tests`,
+    CSW.`csw-config-cli`
   ) ++ TestDependencies ++ AllCswLibs
 
   val Logging: Seq[ModuleID] = Seq(
@@ -102,7 +102,6 @@ object Dependencies {
     CSW.`csw-event-cli-tests`,
     CSW.`csw-event-cli`
   ) ++ TestDependencies ++ AllCswLibs
-
 
   val CswRunner: Seq[ModuleID] = Seq(Libs.`scalatest`)
 }

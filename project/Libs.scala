@@ -1,7 +1,7 @@
 import sbt._
 
 object Libs {
-  val ScalaVersion = "2.12.6"
+  val ScalaVersion = "2.12.7"
 
   val `scalatest`                = "org.scalatest"        %% "scalatest"                % "3.0.5" //Apache License 2.0
   val `junit`                    = "junit"                % "junit"                     % "4.12" //Eclipse Public License 1.0
@@ -19,55 +19,64 @@ object CSW {
     val env = sys.env ++ sys.props
     env.get("BUILD_ENV") match {
       case Some("PROD") ⇒ env.getOrElse("RELEASE_VERSION", "")
-      case Some("DEV")  ⇒ env.getOrElse("DEV_VERSION", "0.5.0-RC1")
+      case Some("DEV")  ⇒ env.getOrElse("DEV_VERSION", "0.5.0")
       // FIXME: below case will run acceptance tests with the Dev Version if BUILD_ENV=PROD is not set in release pipeline/machine
       case _ ⇒ env.getOrElse("DEV_VERSION", "0.1-SNAPSHOT")
     }
   }
 
-  val `csw-location`       = "org.tmt" %% "csw-location" % Version
-  val `csw-location-tests` = "org.tmt" %% "csw-location" % Version classifier "tests"
+  val `csw-admin-server`       = "com.github.tmtsoftware.csw" %% "csw-admin-server" % Version
+  val `csw-admin-server-tests` = "com.github.tmtsoftware.csw" %% "csw-admin-server" % Version classifier "tests"
 
-  val `csw-config-server`       = "org.tmt" %% "csw-config-server" % Version
-  val `csw-config-server-tests` = "org.tmt" %% "csw-config-server" % Version classifier "tests"
+  val `csw-location-server`       = "com.github.tmtsoftware.csw" %% "csw-location-server" % Version
+  val `csw-location-server-tests` = "com.github.tmtsoftware.csw" %% "csw-location-server" % Version classifier "tests"
 
-  val `csw-config-api`       = "org.tmt" %% "csw-config-api" % Version
-  val `csw-config-api-tests` = "org.tmt" %% "csw-config-api" % Version classifier "tests"
+  val `csw-config-server`       = "com.github.tmtsoftware.csw" %% "csw-config-server" % Version
+  val `csw-config-server-tests` = "com.github.tmtsoftware.csw" %% "csw-config-server" % Version classifier "tests"
 
-  val `csw-config-client`       = "org.tmt" %% "csw-config-client" % Version
-  val `csw-config-client-tests` = "org.tmt" %% "csw-config-client" % Version classifier "tests"
+  val `csw-config-api`       = "com.github.tmtsoftware.csw" %% "csw-config-api" % Version
+  val `csw-config-api-tests` = "com.github.tmtsoftware.csw" %% "csw-config-api" % Version classifier "tests"
 
-  val `csw-config-cli`       = "org.tmt" %% "csw-config-cli" % Version
-  val `csw-config-cli-tests` = "org.tmt" %% "csw-config-cli" % Version classifier "tests"
+  val `csw-config-client`       = "com.github.tmtsoftware.csw" %% "csw-config-client" % Version
+  val `csw-config-client-tests` = "com.github.tmtsoftware.csw" %% "csw-config-client" % Version classifier "tests"
 
-  val `csw-logging`       = "org.tmt" %% "csw-logging" % Version
-  val `csw-logging-tests` = "org.tmt" %% "csw-logging" % Version classifier "tests"
+  val `csw-config-cli`       = "com.github.tmtsoftware.csw" %% "csw-config-cli" % Version
+  val `csw-config-cli-tests` = "com.github.tmtsoftware.csw" %% "csw-config-cli" % Version classifier "tests"
 
-  val `csw-cluster-seed`       = "org.tmt" %% "csw-cluster-seed" % Version
-  val `csw-cluster-seed-tests` = "org.tmt" %% "csw-cluster-seed" % Version classifier "tests"
+  val `csw-logging`       = "com.github.tmtsoftware.csw" %% "csw-logging" % Version
+  val `csw-logging-tests` = "com.github.tmtsoftware.csw" %% "csw-logging" % Version classifier "tests"
 
-  val `csw-commons`       = "org.tmt" %% "csw-commons" % Version
-  val `csw-commons-tests` = "org.tmt" %% "csw-commons" % Version classifier "tests"
+  val `csw-commons`       = "com.github.tmtsoftware.csw" %% "csw-commons" % Version
+  val `csw-commons-tests` = "com.github.tmtsoftware.csw" %% "csw-commons" % Version classifier "tests"
 
-  val `csw-framework`       = "org.tmt" %% "csw-framework" % Version
-  val `csw-framework-tests` = "org.tmt" %% "csw-framework" % Version classifier "tests"
+  val `csw-framework`       = "com.github.tmtsoftware.csw" %% "csw-framework" % Version
+  val `csw-framework-tests` = "com.github.tmtsoftware.csw" %% "csw-framework" % Version classifier "tests"
 
-  val `csw-command`       = "org.tmt" %% "csw-command" % Version
-  val `csw-command-tests` = "org.tmt" %% "csw-command" % Version classifier "tests"
+  val `csw-command`       = "com.github.tmtsoftware.csw" %% "csw-command" % Version
+  val `csw-command-tests` = "com.github.tmtsoftware.csw" %% "csw-command" % Version classifier "tests"
 
-  val `csw-messages`       = "org.tmt" %% "csw-messages" % Version
-  val `csw-messages-tests` = "org.tmt" %% "csw-messages" % Version classifier "tests"
+  val `csw-params`       = "com.github.tmtsoftware.csw" %% "csw-params" % Version
+  val `csw-params-tests` = "com.github.tmtsoftware.csw" %% "csw-params" % Version classifier "tests"
 
-  val `csw-location-agent`       = "org.tmt" %% "csw-location-agent" % Version
-  val `csw-location-agent-tests` = "org.tmt" %% "csw-location-agent" % Version classifier "tests"
+  val `csw-location-agent`       = "com.github.tmtsoftware.csw" %% "csw-location-agent" % Version
+  val `csw-location-agent-tests` = "com.github.tmtsoftware.csw" %% "csw-location-agent" % Version classifier "tests"
 
-  val `csw-event-client`       = "org.tmt" %% "csw-event-client" % Version
-  val `csw-event-client-tests` = "org.tmt" %% "csw-event-client" % Version classifier "tests"
+  val `csw-event-api` = "com.github.tmtsoftware.csw" %% "csw-event-api" % Version
 
-  val `csw-event-cli`       = "org.tmt" %% "csw-event-cli" % Version
-  val `csw-event-cli-tests` = "org.tmt" %% "csw-event-cli" % Version classifier "tests"
+  val `csw-event-client`       = "com.github.tmtsoftware.csw" %% "csw-event-client" % Version
+  val `csw-event-client-tests` = "com.github.tmtsoftware.csw" %% "csw-event-client" % Version classifier "tests"
 
-  val `csw-event-api` = "org.tmt" %% "csw-event-api" % Version
+  val `csw-event-cli`       = "com.github.tmtsoftware.csw" %% "csw-event-cli" % Version
+  val `csw-event-cli-tests` = "com.github.tmtsoftware.csw" %% "csw-event-cli" % Version classifier "tests"
+
+  val `csw-alarm-api` = "com.github.tmtsoftware.csw" %% "csw-alarm-api" % Version
+  val `csw-alarm-api-tests` = "com.github.tmtsoftware.csw" %% "csw-alarm-api" % Version classifier "tests"
+
+  val `csw-alarm-client`       = "com.github.tmtsoftware.csw" %% "csw-alarm-client" % Version
+  val `csw-alarm-client-tests` = "com.github.tmtsoftware.csw" %% "csw-alarm-client" % Version classifier "tests"
+
+  val `csw-alarm-cli`       = "com.github.tmtsoftware.csw" %% "csw-alarm-cli" % Version
+  val `csw-alarm-cli-tests` = "com.github.tmtsoftware.csw" %% "csw-alarm-cli" % Version classifier "tests"
 }
 
 object Akka {

@@ -42,6 +42,7 @@ object Common extends AutoPlugin {
       Tests.Argument(TestFrameworks.JUnit, "-v", "-a")
     ),
     resolvers += Resolver.bintrayRepo("twtmt", "maven"),
+//    resolvers += "jitpack" at "https://jitpack.io",
     version := {
       sys.props.get("prod.publish") match {
         case Some("true") => version.value

@@ -1,0 +1,8 @@
+===============================================================================================================
+Alarm Key: nfiraos-trombone-tromboneaxislowlimitalarm
+Acknowledgement Status: Acknowledged
+Latch Severity: Disconnected
+Shelve Status: Unshelved
+Alarm Time: 2018-08-30T09:07:44.174Z
+Current Severity: Disconnected
+===============================================================================================================

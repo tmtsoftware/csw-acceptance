@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
-sbt cluster-seed/run
-sbt command/run
+sbt admin-server/run
+sbt location-server/run
 sbt config-api/run
-sbt config-client/run
-sbt config-client-cli/run
 sbt config-server/run
-sbt framework/run
-sbt location/run
+sbt config-client/run
+sbt config-cli/run
 sbt logging/run
-sbt messages/run
+sbt params/run
+sbt command/run
+sbt framework/run
+sbt event-client/run
+sbt event-cli/run
+sbt alarm-api/run
+sbt alarm-client/run
+sbt alarm-cli/run

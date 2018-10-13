@@ -11,18 +11,21 @@ pipeline {
         }
         stage('Acceptance Test') {
             steps {
-                sh "sbt cluster-seed/run"
-                sh "sbt command/run"
+                sh "sbt admin-server/run"
+                sh "sbt location-server/run"
                 sh "sbt config-api/run"
+                sh "sbt config-server/run"
                 sh "sbt config-client/run"
                 sh "sbt config-client-cli/run"
-                sh "sbt config-server/run"
-                sh "sbt framework/run"
-                sh "sbt location/run"
                 sh "sbt logging/run"
-                sh "sbt messages/run"
+                sh "sbt params/run"
+                sh "sbt command/run"
+                sh "sbt framework/run"
                 sh "sbt event-client/run"
                 sh "sbt event-cli/run"
+                sh "sbt alarm-api/run"
+                sh "sbt alarm-client/run"
+                sh "sbt alarm-cli/run"
             }
         }
     }

@@ -14,6 +14,12 @@ object Libs {
 
 }
 
+object Chill {
+  val Version           = "0.9.3"
+  val `chill-akka`      = "com.twitter" %% "chill-akka" % Version //Apache License 2.0
+  val `chill-bijection` = "com.twitter" %% "chill-bijection" % Version //Apache License 2.0
+}
+
 object CSW {
   val Version: String = {
     val env = sys.env ++ sys.props
@@ -52,8 +58,8 @@ object CSW {
   val `csw-framework`       = "com.github.tmtsoftware.csw" %% "csw-framework" % Version
   val `csw-framework-tests` = "com.github.tmtsoftware.csw" %% "csw-framework" % Version classifier "tests"
 
-  val `csw-command`       = "com.github.tmtsoftware.csw" %% "csw-command" % Version
-  val `csw-command-tests` = "com.github.tmtsoftware.csw" %% "csw-command" % Version classifier "tests"
+  val `csw-command-client`       = "com.github.tmtsoftware.csw" %% "csw-command-client" % Version
+  val `csw-command-client-tests` = "com.github.tmtsoftware.csw" %% "csw-command-client" % Version classifier "tests"
 
   val `csw-params`       = "com.github.tmtsoftware.csw" %% "csw-params" % Version
   val `csw-params-tests` = "com.github.tmtsoftware.csw" %% "csw-params" % Version classifier "tests"

@@ -9,7 +9,7 @@ lazy val aggregatedProjects: Seq[ProjectReference] = Seq(
   `logging`,
   `framework`,
   `params`,
-  `command`,
+  `command-client`,
   `event-client`,
   `event-cli`,
   `alarm-api`,
@@ -92,11 +92,11 @@ lazy val `params` = project
     libraryDependencies ++= Dependencies.Params
   )
 
-lazy val `command` = project
+lazy val `command-client` = project
   .enablePlugins(DeployApp)
   .dependsOn(`csw-runner`)
   .settings(
-    libraryDependencies ++= Dependencies.Command
+    libraryDependencies ++= Dependencies.CommandClient
   )
 
 lazy val `event-client` = project

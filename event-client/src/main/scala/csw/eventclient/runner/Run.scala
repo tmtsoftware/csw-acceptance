@@ -1,4 +1,4 @@
-package csw.event.runner
+package csw.eventclient.runner
 
 import csw.acceptance.runner.AcceptanceTestRunner
 

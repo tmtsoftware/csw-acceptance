@@ -28,7 +28,7 @@ object Dependencies {
     CSW.`csw-logging`,
     CSW.`csw-params`,
     CSW.`csw-framework`,
-    CSW.`csw-command`,
+    CSW.`csw-command-client`,
     CSW.`csw-commons`,
     CSW.`csw-event-api`,
     CSW.`csw-event-client`,
@@ -69,9 +69,9 @@ object Dependencies {
 
   val ConfigClient: Seq[ModuleID] = Seq(
     CSW.`csw-config-client-tests`,
-    CSW.`csw-config-client`,
     CSW.`csw-location-server-tests`,
-    CSW.`csw-config-server-tests`
+    CSW.`csw-config-server-tests`,
+    CSW.`csw-config-client`
   ) ++ TestDependencies ++ AllCswLibs
 
   val ConfigCli: Seq[ModuleID] = Seq(
@@ -93,12 +93,13 @@ object Dependencies {
 
   val Params: Seq[ModuleID] = Seq(
     CSW.`csw-params-tests`,
-    CSW.`csw-params`
+    CSW.`csw-params`,
+    Chill.`chill-akka`
   ) ++ TestDependencies ++ AllCswLibs
 
-  val Command: Seq[ModuleID] = Seq(
-    CSW.`csw-command-tests`,
-    CSW.`csw-command`
+  val CommandClient: Seq[ModuleID] = Seq(
+    CSW.`csw-command-client-tests`,
+    CSW.`csw-command-client`
   ) ++ TestDependencies ++ AllCswLibs
 
   val EventClient: Seq[ModuleID] = Seq(

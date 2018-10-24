@@ -8,7 +8,7 @@ sbt config-client/run
 sbt config-cli/run
 sbt logging/run
 sbt params/run
-sbt command/run
+sbt command-client/run
 sbt framework/run
 sbt event-client/run
 sbt event-cli/run

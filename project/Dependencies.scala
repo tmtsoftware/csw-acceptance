@@ -93,8 +93,8 @@ object Dependencies {
 
   val Params: Seq[ModuleID] = Seq(
     CSW.`csw-params-tests`,
-    CSW.`csw-params`,
-    Chill.`chill-akka`
+    Chill.`chill-bijection`,
+    CSW.`csw-params`
   ) ++ TestDependencies ++ AllCswLibs
 
   val CommandClient: Seq[ModuleID] = Seq(

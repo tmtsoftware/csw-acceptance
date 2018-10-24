@@ -19,7 +19,7 @@ pipeline {
                 sh "sbt config-client-cli/run"
                 sh "sbt logging/run"
                 sh "sbt params/run"
-                sh "sbt command/run"
+                sh "sbt command-client/run"
                 sh "sbt framework/run"
                 sh "sbt event-client/run"
                 sh "sbt event-cli/run"

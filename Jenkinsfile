@@ -16,7 +16,7 @@ pipeline {
                 sh "sbt config-api/run"
                 sh "sbt config-server/run"
                 sh "sbt config-client/run"
-                sh "sbt config-client-cli/run"
+                sh "sbt config-cli/run"
                 sh "sbt logging/run"
                 sh "sbt params/run"
                 sh "sbt command-client/run"

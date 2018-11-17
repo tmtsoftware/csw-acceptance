@@ -34,6 +34,4 @@ Before running any tests, make sure that you have correct env variables setup ba
 
 ## Running Tests
 1. `sbt location-server/run` : Runs scala and java tests from location-server
-2. `sbt "location-server/run -java"` : Runs java tests from location-server
-3. `sbt "location-server/run -scala"` : Runs scala tests from location-server
 4. `run-all.sh` : This script runs both scala and java tests from all the projects.

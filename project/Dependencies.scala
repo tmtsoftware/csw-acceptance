@@ -20,6 +20,7 @@ object Dependencies {
   val AllCswLibs: Seq[ModuleID] = Seq(
     CSW.`csw-admin-server`,
     CSW.`csw-location-server`,
+    CSW.`csw-location-client`,
     CSW.`csw-location-agent`,
     CSW.`csw-config-server`,
     CSW.`csw-config-api`,
@@ -34,7 +35,8 @@ object Dependencies {
     CSW.`csw-event-client`,
     CSW.`csw-alarm-api`,
     CSW.`csw-alarm-client`,
-    CSW.`csw-alarm-cli`
+    CSW.`csw-alarm-cli`,
+    CSW.`csw-network-utils`
   )
 
   val AdminServer: Seq[ModuleID] = Seq(
@@ -48,6 +50,7 @@ object Dependencies {
   val LocationServer: Seq[ModuleID] = Seq(
     CSW.`csw-location-server-tests`,
     CSW.`csw-location-server`,
+    CSW.`csw-location-client`,
     CSW.`csw-config-server-tests`,
     CSW.`csw-framework-tests`
   ) ++ TestDependencies ++ AllCswLibs

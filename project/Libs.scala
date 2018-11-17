@@ -37,6 +37,9 @@ object CSW {
   val `csw-location-server`       = "com.github.tmtsoftware.csw" %% "csw-location-server" % Version
   val `csw-location-server-tests` = "com.github.tmtsoftware.csw" %% "csw-location-server" % Version classifier "tests"
 
+  val `csw-location-client`       = "com.github.tmtsoftware.csw" %% "csw-location-client" % Version
+  val `csw-location-client-tests` = "com.github.tmtsoftware.csw" %% "csw-location-client" % Version classifier "tests"
+
   val `csw-config-server`       = "com.github.tmtsoftware.csw" %% "csw-config-server" % Version
   val `csw-config-server-tests` = "com.github.tmtsoftware.csw" %% "csw-config-server" % Version classifier "tests"
 
@@ -54,6 +57,9 @@ object CSW {
 
   val `csw-commons`       = "com.github.tmtsoftware.csw" %% "csw-commons" % Version
   val `csw-commons-tests` = "com.github.tmtsoftware.csw" %% "csw-commons" % Version classifier "tests"
+
+  val `csw-network-utils`       = "com.github.tmtsoftware.csw" %% "csw-network-utils" % Version
+  val `csw-network-utils-tests` = "com.github.tmtsoftware.csw" %% "csw-network-utils" % Version classifier "tests"
 
   val `csw-framework`       = "com.github.tmtsoftware.csw" %% "csw-framework" % Version
   val `csw-framework-tests` = "com.github.tmtsoftware.csw" %% "csw-framework" % Version classifier "tests"

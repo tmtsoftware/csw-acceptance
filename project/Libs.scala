@@ -6,7 +6,7 @@ object Libs {
   val `scalatest`                = "org.scalatest"        %% "scalatest"                % "3.0.5" //Apache License 2.0
   val `junit`                    = "junit"                % "junit"                     % "4.12" //Eclipse Public License 1.0
   val `junit-interface`          = "com.novocode"         % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
-  val `mockito-core`             = "org.mockito"          % "mockito-core"              % "2.21.0" //MIT License
+  val `mockito-scala`            = "org.mockito"          %% "mockito-scala"            % "1.0.8"
   val `scalatest-embedded-kafka` = "net.manub"            %% "scalatest-embedded-kafka" % "1.1.0"
   val `embedded-redis`           = "com.github.kstyrc"    % "embedded-redis"            % "0.6"
   val `testng`                   = "org.testng"           % "testng"                    % "6.14.3"

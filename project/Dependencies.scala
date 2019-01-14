@@ -6,7 +6,7 @@ object Dependencies {
     Libs.`scalatest`,
     Libs.`junit`,
     Libs.`junit-interface`,
-    Libs.`mockito-core`,
+    Libs.`mockito-scala`,
     Libs.`gson`,
     Libs.`scalatest-embedded-kafka`,
     Libs.`embedded-redis`,

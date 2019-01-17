@@ -52,8 +52,8 @@ object CSW {
   val `csw-config-cli`       = "com.github.tmtsoftware.csw" %% "csw-config-cli" % Version
   val `csw-config-cli-tests` = "com.github.tmtsoftware.csw" %% "csw-config-cli" % Version classifier "tests"
 
-  val `csw-logging`       = "com.github.tmtsoftware.csw" %% "csw-logging" % Version
-  val `csw-logging-tests` = "com.github.tmtsoftware.csw" %% "csw-logging" % Version classifier "tests"
+  val `csw-logging`       = "com.github.tmtsoftware.csw" %% "csw-logging-client" % Version
+  val `csw-logging-tests` = "com.github.tmtsoftware.csw" %% "csw-logging-client" % Version classifier "tests"
 
   val `csw-commons`       = "com.github.tmtsoftware.csw" %% "csw-commons" % Version
   val `csw-commons-tests` = "com.github.tmtsoftware.csw" %% "csw-commons" % Version classifier "tests"
@@ -81,7 +81,7 @@ object CSW {
   val `csw-event-cli`       = "com.github.tmtsoftware.csw" %% "csw-event-cli" % Version
   val `csw-event-cli-tests` = "com.github.tmtsoftware.csw" %% "csw-event-cli" % Version classifier "tests"
 
-  val `csw-alarm-api` = "com.github.tmtsoftware.csw" %% "csw-alarm-api" % Version
+  val `csw-alarm-api`       = "com.github.tmtsoftware.csw" %% "csw-alarm-api" % Version
   val `csw-alarm-api-tests` = "com.github.tmtsoftware.csw" %% "csw-alarm-api" % Version classifier "tests"
 
   val `csw-alarm-client`       = "com.github.tmtsoftware.csw" %% "csw-alarm-client" % Version

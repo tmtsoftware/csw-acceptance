@@ -1,4 +1,4 @@
-CSW Acceptance Testing Report for run starting Wed Jan 16 16:28:48 PST 2019
+CSW Acceptance Testing Report for run starting Wed Jan 16 16:28:48 PST 2019,,
 Class,Test Name,Result
 csw.admin.server.log.HttpAndTcpLogAdminTest,get component log meta data for http service not supported,PASSED
 csw.admin.server.log.HttpAndTcpLogAdminTest,set component log level for http service not supported,PASSED

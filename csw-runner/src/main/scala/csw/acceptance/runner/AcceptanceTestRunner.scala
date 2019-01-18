@@ -20,6 +20,8 @@ class AcceptanceTestRunner(testProjectName: String) {
 
   private val scalaTestParams: Array[String] = Array(
       "-oDF",
+      "-C",
+      "csw.acceptance.running.FileAcceptanceTestReporter",
       "-l",
       "csw.commons.tags.FileSystemSensitive",
       "-l",

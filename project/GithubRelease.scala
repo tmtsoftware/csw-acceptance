@@ -1,4 +1,5 @@
 import java.io.{BufferedWriter, File, FileWriter}
+import java.time.Instant
 
 import ohnosequences.sbt.GithubRelease.keys.{ghreleaseAssets, ghreleaseRepoName, ghreleaseRepoOrg, githubRelease}
 import ohnosequences.sbt.SbtGithubReleasePlugin
@@ -27,19 +28,15 @@ object GithubRelease extends AutoPlugin {
     lazy val testReportFile = target.value / "test-reports.txt"
     val files               = target.all(aggregateFilter).value.map(_ / "test-reports.txt")
 
-    val writer              = new BufferedWriter(new FileWriter(testReportFile))
-
-    writer.write("CSW Acceptance Testing Report\tRun started\t${prettyDate}")
+    IO.write(testReportFile, s"CSW Acceptance Testing Report\tRun started \t${Instant.now()}\n")
     // Note: delimiter for the following line should match that in FileAcceptanceTestReporter
-    writer.append("Class\tTest Name\tResult")
+    IO.append(testReportFile, "Class\tTest Name\tResult\n")
 
     files.foreach { file =>
       logger.info(s"Writing from file: ${file.name}")
-      writer.append(Source.fromFile(file).mkString)
+      IO.append(testReportFile, Source.fromFile(file).mkString)
     }
 
-    writer.flush()
-    writer.close()
     testReportFile
   }
 

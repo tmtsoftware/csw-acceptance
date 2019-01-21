@@ -11,13 +11,13 @@ pipeline {
         }
         stage('Acceptance Test') {
             steps {
-                sbt run
+                sh "sbt run"
             }
         }
 
         stage('Release') {
             steps {
-                sbt githubRelease
+                sh "sbt githubRelease"
             }
         }
     }

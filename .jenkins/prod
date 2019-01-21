@@ -11,7 +11,13 @@ pipeline {
         }
         stage('Acceptance Test') {
             steps {
-                sh "run-all-and-publish.sh"
+                sbt run
+            }
+        }
+
+        stage('Release') {
+            steps {
+                sbt githubRelease
             }
         }
     }

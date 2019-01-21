@@ -11,7 +11,7 @@ class FileAcceptanceTestReporter extends Reporter {
   private val data = mutable.ListBuffer[String]()
   private val delimiter="\t"
 
-  private val file = "testReport.txt"
+  private val file = "target/test-reports.txt"
   override def apply(event: Event): Unit = event match {
     case _: RunStarting   => data.clear()
     case _: RunCompleted  => writeData()

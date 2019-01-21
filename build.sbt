@@ -1,5 +1,5 @@
-
 lazy val aggregatedProjects: Seq[ProjectReference] = Seq(
+  `admin-server`,
   `location-server`,
   `location-agent`,
   `config-server`,
@@ -19,7 +19,13 @@ lazy val aggregatedProjects: Seq[ProjectReference] = Seq(
 
 lazy val `csw-acceptance` = project
   .in(file("."))
+  .enablePlugins(GithubRelease)
   .aggregate(aggregatedProjects: _*)
+  .settings(GithubRelease.githubReleases())
+  .settings(
+    parallelExecution in run := false,
+    aggregate in run := true
+  )
 
 lazy val `admin-server` = project
   .enablePlugins(DeployApp)

@@ -44,6 +44,7 @@ object Common extends AutoPlugin {
       }
     },
     isSnapshot := !sys.props.get("prod.publish").contains("true"),
+    cancelable in Global := true,
     fork := true,
     detectCycles := true,
     autoCompilerPlugins := true

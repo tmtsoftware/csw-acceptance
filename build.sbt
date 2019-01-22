@@ -22,10 +22,6 @@ lazy val `csw-acceptance` = project
   .enablePlugins(GithubRelease)
   .aggregate(aggregatedProjects: _*)
   .settings(GithubRelease.githubReleases())
-  .settings(
-    parallelExecution in run := false,
-    aggregate in run := true
-  )
 
 lazy val `admin-server` = project
   .enablePlugins(DeployApp)

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 sbt admin-server/run
 sbt location-server/run
 sbt location-agent/run

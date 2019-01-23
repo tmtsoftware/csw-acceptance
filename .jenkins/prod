@@ -15,6 +15,13 @@ pipeline {
             }
         }
 
+        stage('Git Tag') {
+            steps {
+                sh "git tag v$RELEASE_VERSION"
+                sh "git push origin v$RELEASE_VERSION"
+            }
+        }
+
         stage('Release') {
             steps {
                 sh "sbt githubRelease"

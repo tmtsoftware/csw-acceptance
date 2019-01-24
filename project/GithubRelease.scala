@@ -1,4 +1,4 @@
-import java.io.{BufferedWriter, File, FileWriter}
+import java.io.File
 import java.time.Instant
 
 import ohnosequences.sbt.GithubRelease.keys.{ghreleaseAssets, ghreleaseRepoName, ghreleaseRepoOrg, githubRelease}

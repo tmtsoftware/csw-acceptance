@@ -34,9 +34,15 @@ object Common extends AutoPlugin {
 //      "-Xprint:typer"
     ),
     javacOptions in (Compile, doc) ++= Seq("-Xdoclint:none"),
-    
-    resolvers += Resolver.bintrayRepo("twtmt", "maven"),
-//    resolvers += "jitpack" at "https://jitpack.io",
+    testOptions in Test ++= Seq(
+      // show full stack traces and test case durations
+      Tests.Argument("-oDF"),
+      // -v Log "test run started" / "test started" / "test run finished" events on log level "info" instead of "debug".
+      // -a Show stack traces and exception class name for AssertionErrors.
+      Tests.Argument(TestFrameworks.JUnit, "-v", "-a")
+    ),
+//    resolvers += Resolver.bintrayRepo("twtmt", "maven"),
+    resolvers += "jitpack" at "https://jitpack.io",
     version := {
       sys.props.get("prod.publish") match {
         case Some("true") => version.value

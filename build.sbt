@@ -14,7 +14,8 @@ lazy val aggregatedProjects: Seq[ProjectReference] = Seq(
   `event-cli`,
   `alarm-api`,
   `alarm-client`,
-  `alarm-cli`
+  `alarm-cli`,
+  `aas`
 )
 
 lazy val `csw-acceptance` = project
@@ -134,6 +135,27 @@ lazy val `alarm-cli` = project
   .dependsOn(`csw-runner`)
   .settings(
     libraryDependencies ++= Dependencies.AlarmCli
+  )
+
+lazy val `aas` = project
+  .enablePlugins(DeployApp)
+  .dependsOn(`csw-runner`)
+  .settings(
+    libraryDependencies ++= Dependencies.Aas
+  )
+
+lazy val `time` = project
+  .enablePlugins(DeployApp)
+  .dependsOn(`csw-runner`)
+  .settings(
+    libraryDependencies ++= Dependencies.Time
+  )
+
+lazy val `database` = project
+  .enablePlugins(DeployApp)
+  .dependsOn(`csw-runner`)
+  .settings(
+    libraryDependencies ++= Dependencies.Database
   )
 
 lazy val `csw-runner` = project

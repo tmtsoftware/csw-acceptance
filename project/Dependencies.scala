@@ -10,9 +10,11 @@ object Dependencies {
     Libs.`gson`,
     Libs.`scalatest-embedded-kafka`,
     Libs.`embedded-redis`,
+    Libs.`otj-pg-embedded`,
     Akka.`akka-stream-testkit`,
     Akka.`akka-actor-testkit-typed`,
     Akka.`akka-multi-node-testkit`,
+    AkkaHttp.`akka-http-testkit`,
     Libs.`testng`,
     CSW.`csw-commons-tests`
   )
@@ -126,7 +128,6 @@ object Dependencies {
     CSW.`csw-alarm-client`,
     CSW.`csw-logging-tests`,
     CSW.`csw-location-server-tests`
-
   ) ++ TestDependencies ++ AllCswLibs
 
   val AlarmCli: Seq[ModuleID] = Seq(
@@ -134,6 +135,31 @@ object Dependencies {
     CSW.`csw-alarm-cli`,
     CSW.`csw-location-server-tests`,
     CSW.`csw-config-server-tests`
+  ) ++ TestDependencies ++ AllCswLibs
+
+  val Aas: Seq[ModuleID] = Seq(
+    CSW.`csw-aas-core-tests`,
+    CSW.`csw-aas-http-tests`,
+    CSW.`csw-aas-installed-tests`,
+    CSW.`csw-aas-core`,
+    CSW.`csw-aas-http`,
+    CSW.`csw-aas-installed`
+  ) ++ TestDependencies ++ AllCswLibs
+
+  val Time: Seq[ModuleID] = Seq(
+    CSW.`csw-time-core-tests`,
+    CSW.`csw-time-scheduler-tests`,
+    CSW.`csw-time-clock-tests`,
+    CSW.`csw-time-core`,
+    CSW.`csw-time-scheduler`,
+    CSW.`csw-time-clock`
+  ) ++ TestDependencies ++ AllCswLibs
+
+  val Database: Seq[ModuleID] = Seq(
+    CSW.`csw-database-tests`,
+    CSW.`csw-database`,
+    CSW.`csw-location-server-tests`,
+    Akka.`akka-actor`
   ) ++ TestDependencies ++ AllCswLibs
 
   val CswRunner: Seq[ModuleID] = Seq(Libs.`scalatest`)

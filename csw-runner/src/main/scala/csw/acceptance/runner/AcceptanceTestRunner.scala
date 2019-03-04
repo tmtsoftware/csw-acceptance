@@ -1,16 +1,12 @@
 package csw.acceptance.runner
 
-import java.net.URLClassLoader
-
 import org.scalatest.tools.Runner
 
 class AcceptanceTestRunner(testProjectName: String) {
 
   private val testJarRunpath =
-    getClass.getClassLoader
-      .asInstanceOf[URLClassLoader]
-      .getURLs
-      .map(_.getPath)
+    System.getProperty("java.class.path")
+      .split(":")
       .find(x ⇒ x.contains(testProjectName) && x.contains("tests.jar"))
       .getOrElse("")
 

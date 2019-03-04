@@ -6,12 +6,11 @@ object Libs {
   val `scalatest`                = "org.scalatest"        %% "scalatest"                % "3.0.5" //Apache License 2.0
   val `junit`                    = "junit"                % "junit"                     % "4.12" //Eclipse Public License 1.0
   val `junit-interface`          = "com.novocode"         % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
-  val `mockito-scala`            = "org.mockito"          %% "mockito-scala"            % "1.0.8"
+  val `mockito-scala`            = "org.mockito"          %% "mockito-scala"            % "1.1.4"
   val `scalatest-embedded-kafka` = "net.manub"            %% "scalatest-embedded-kafka" % "1.1.0"
   val `embedded-redis`           = "com.github.kstyrc"    % "embedded-redis"            % "0.6"
   val `testng`                   = "org.testng"           % "testng"                    % "6.14.3"
   val `gson`                     = "com.google.code.gson" % "gson"                      % "2.8.5" //Apache 2.0
-
 }
 
 object Chill {
@@ -92,13 +91,13 @@ object CSW {
 }
 
 object Akka {
-  val Version                    = "2.5.13" //all akka is Apache License 2.0
+  val Version                    = "2.5.21" //all akka is Apache License 2.0
   val `akka-stream-testkit`      = "com.typesafe.akka" %% "akka-stream-testkit" % Version
   val `akka-actor-testkit-typed` = "com.typesafe.akka" %% "akka-actor-testkit-typed" % Version
   val `akka-multi-node-testkit`  = "com.typesafe.akka" %% "akka-multi-node-testkit" % Version
 }
 
 object AkkaHttp {
-  val Version             = "10.1.3"
+  val Version             = "10.1.7"
   val `akka-http-testkit` = "com.typesafe.akka" %% "akka-http-testkit" % Version //ApacheV2
 }

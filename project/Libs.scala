@@ -6,7 +6,7 @@ object Libs {
   val `scalatest`                = "org.scalatest"            %% "scalatest"                % "3.0.5" //Apache License 2.0
   val `junit`                    = "junit"                    % "junit"                     % "4.12" //Eclipse Public License 1.0
   val `junit-interface`          = "com.novocode"             % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
-  val `mockito-scala`            = "org.mockito"              %% "mockito-scala"            % "1.1.4"
+  val `mockito-scala`            = "org.mockito"              %% "mockito-scala"            % "1.2.1"
   val `scalatest-embedded-kafka` = "net.manub"                %% "scalatest-embedded-kafka" % "1.1.0"
   val `embedded-redis`           = "com.github.kstyrc"        % "embedded-redis"            % "0.6"
   val `otj-pg-embedded`          = "com.opentable.components" % "otj-pg-embedded"           % "0.13.1"
@@ -116,6 +116,6 @@ object Akka {
 }
 
 object AkkaHttp {
-  val Version             = "10.1.7"
+  val Version             = "10.1.8"
   val `akka-http-testkit` = "com.typesafe.akka" %% "akka-http-testkit" % Version //ApacheV2
 }

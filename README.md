@@ -26,10 +26,7 @@ Before running any tests, make sure that you have correct env variables setup ba
 
 | Env var | Value | Description |
 |  -----  | ----- |    -----    |
-| BUILD_ENV | PROD | If this is set, then Env Var RELEASE_VERSION is expected to be set |
-| BUILD_ENV | DEV | If this is set, then Env Var DEV_VERSION is expected to be set |
-| RELEASE_VERSION | Ex. 0.1.2+1382-e9c8523b+20180223-1035 | When BUILD_ENV=PROD then cw-prod libraries with this version will be pulled |
-| DEV_VERSION | Ex. 0.1-SNAPSHOT | When BUILD_ENV=DEV then cw-prod libraries with this version will be pulled |
+| CSW_VERSION | Ex. 0.6.0 | CSW libraries of this version will be pulled. Will pickup CSW_VERSION if it is set else will default to 0.1-SNAPSHOT
 
 
 ## Running Tests

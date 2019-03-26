@@ -19,8 +19,8 @@ pipeline {
 
         stage('Git Tag') {
             steps {
-                sh "git tag v$RELEASE_VERSION"
-                sh "git push origin v$RELEASE_VERSION"
+                sh "git tag v$CSW_VERSION"
+                sh "git push origin v$CSW_VERSION"
             }
         }
 

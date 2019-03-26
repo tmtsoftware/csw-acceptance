@@ -162,5 +162,9 @@ object Dependencies {
     Akka.`akka-actor`
   ) ++ TestDependencies ++ AllCswLibs
 
-  val CswRunner: Seq[ModuleID] = Seq(Libs.`scalatest`)
+  val CswRunner: Seq[ModuleID] = Seq(
+    Libs.`scalatest`,
+    Coursier.`coursier`,
+    Coursier.`coursier-cache`
+  )
 }

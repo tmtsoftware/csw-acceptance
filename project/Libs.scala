@@ -119,3 +119,9 @@ object AkkaHttp {
   val Version             = "10.1.8"
   val `akka-http-testkit` = "com.typesafe.akka" %% "akka-http-testkit" % Version //ApacheV2
 }
+
+object Coursier {
+  val Version          = "1.1.0-M13-2"
+  val `coursier`       = "io.get-coursier" %% "coursier" % Version
+  val `coursier-cache` = "io.get-coursier" %% "coursier-cache" % Version
+}

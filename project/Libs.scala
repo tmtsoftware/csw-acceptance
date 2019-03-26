@@ -23,12 +23,7 @@ object Chill {
 object CSW {
   val Version: String = {
     val env = sys.env ++ sys.props
-    env.get("BUILD_ENV") match {
-      case Some("PROD") ⇒ env.getOrElse("RELEASE_VERSION", "")
-      case Some("DEV")  ⇒ env.getOrElse("DEV_VERSION", "0.5.0")
-      // FIXME: below case will run acceptance tests with the Dev Version if BUILD_ENV=PROD is not set in release pipeline/machine
-      case _ ⇒ env.getOrElse("DEV_VERSION", "0.1-SNAPSHOT")
-    }
+    env.getOrElse("CSW_VERSION", "0.1-SNAPSHOT")
   }
 
   val `csw-admin-server`       = "com.github.tmtsoftware.csw" %% "csw-admin-server" % Version

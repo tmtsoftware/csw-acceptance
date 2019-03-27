@@ -1,5 +1,7 @@
 package csw.acceptance.runner
 
+import java.io.File
+
 import coursier._
 import coursier.core.Configuration
 import coursier.util.Task.sync
@@ -10,21 +12,25 @@ import scala.collection.JavaConverters._
 class TestModule(projectName: String, version: String) {
 
   val testArtifact = Dependency(
-    Module(Organization("com.github.tmtsoftware.csw"), ModuleName(s"${projectName}_2.12")),
+    Module(
+      Organization("com.github.tmtsoftware.csw"),
+      ModuleName(s"${projectName}_2.12")
+    ),
     version,
     Configuration.test
   )
 
-  val classpath: String = Fetch()
+  val files: Seq[File] = Fetch()
     .allArtifactTypes()
     .addDependencies(testArtifact)
     .addRepositories(Repositories.jitpack)
     .run()
-    .mkString(":")
+
+  val classpath: String = files.mkString(":")
 
   val testJarRunpath: String =
-    classpath
-      .split(":")
+    files
+      .map(_.toString)
       .find(x ⇒ x.contains(projectName) && x.contains("tests.jar"))
       .getOrElse("")
 

@@ -1,5 +1,6 @@
 import $ivy.`io.get-coursier::coursier:1.1.0-M13-2`
 import $ivy.`io.get-coursier::coursier-cache:1.1.0-M13-2`
+
 import java.io.File
 
 import coursier._
@@ -13,7 +14,6 @@ import scala.collection.JavaConverters._
 def entryPoint(version: String, projects: String*): Unit = {
   val projectNames = if(projects.isEmpty) allProjects else projects.toList
   projectNames.foreach { projectName =>
-    println(s"Running tests from $projectName*******************************************************************")
     new TestModule(projectName, version).run()
   }
 }
@@ -78,6 +78,8 @@ class TestModule(projectName: String, version: String) {
 
   def run(): Process = {
     val builder = new ProcessBuilder(cmds.asJava).inheritIO()
+    println(s"***************** Running acceptance tests for $projectName *****************")
+    println(s"Test jar: $testJarRunpath")
     val process = builder.start()
     process.onExit().get()
   }

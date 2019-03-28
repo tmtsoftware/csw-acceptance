@@ -21,12 +21,14 @@ def entryPoint(version: String, projects: String*): Unit = {
 lazy val allProjects = List(
   "csw-admin-server",
   "csw-location-server",
+  "csw-location-api",
+  "csw-location-client",
   "csw-location-agent",
   "csw-config-server",
   "csw-config-api",
   "csw-config-client",
   "csw-config-cli",
-  "csw-logging",
+  "csw-logging-client",
   "csw-framework",
   "csw-params",
   "csw-command-client",
@@ -34,7 +36,13 @@ lazy val allProjects = List(
   "csw-event-cli",
   "csw-alarm-api",
   "csw-alarm-client",
-  "csw-alarm-cli"
+  "csw-alarm-cli",
+  "csw-aas-core",
+  "csw-aas-installed",
+  "csw-aas-http",
+  "csw-time-core",
+  "csw-time-scheduler",
+  "csw-time-clock"
 )
 
 class TestModule(projectName: String, version: String) {
@@ -78,8 +86,9 @@ class TestModule(projectName: String, version: String) {
 
   def run(): Process = {
     val builder = new ProcessBuilder(cmds.asJava).inheritIO()
-    println(s"***************** Running acceptance tests for $projectName *****************")
-    println(s"Test jar: $testJarRunpath")
+    println(s"*********** Running acceptance tests for [$projectName] ***********")
+    println(s"Test jar: [$testJarRunpath] ")
+    println("*********************************************************************")
     val process = builder.start()
     process.onExit().get()
   }

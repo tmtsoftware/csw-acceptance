@@ -18,3 +18,5 @@ sbt event-cli/run
 sbt alarm-api/run
 sbt alarm-client/run
 sbt alarm-cli/run
+sbt aas/run
+sbt time/run

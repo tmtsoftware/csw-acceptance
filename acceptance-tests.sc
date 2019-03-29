@@ -20,29 +20,33 @@ def entryPoint(version: String, projects: String*): Unit = {
 
 lazy val allProjects = List(
   "csw-admin-server",
-  "csw-location-server",
+  "csw-location-agent",
   "csw-location-api",
   "csw-location-client",
-  "csw-location-agent",
-  "csw-config-server",
+  "csw-location-server",
   "csw-config-api",
-  "csw-config-client",
   "csw-config-cli",
+  "csw-config-client",
+  "csw-config-server",
   "csw-logging-client",
   "csw-framework",
   "csw-params",
+  "csw-command-api",
   "csw-command-client",
-  "csw-event-client",
+  "csw-event-api",
   "csw-event-cli",
+  "csw-event-client",
   "csw-alarm-api",
-  "csw-alarm-client",
   "csw-alarm-cli",
+  "csw-alarm-client",
+  "csw-database",
   "csw-aas-core",
-  "csw-aas-installed",
-  "csw-aas-http",
   "csw-time-core",
+  "csw-aas-http",
+  "csw-aas-installed",
   "csw-time-scheduler",
-  "csw-time-clock"
+  "csw-time-clock",
+  "csw-network-utils"
 )
 
 class TestModule(projectName: String, version: String) {
@@ -78,18 +82,16 @@ class TestModule(projectName: String, version: String) {
     "-oDF",
     "-l",
     "csw.commons.tags.FileSystemSensitive",
-    "-l",
-    "csw.commons.tags.LoggingSystemSensitive",
     "-R",
     testJarRunpath
   )
 
-  def run(): Process = {
+  def run(): Int = {
     val builder = new ProcessBuilder(cmds.asJava).inheritIO()
-    println(s"*********** Running acceptance tests for [$projectName] ***********")
+    println(s"================================ Running acceptance tests for [$projectName] ================================")
     println(s"Test jar: [$testJarRunpath] ")
-    println("*********************************************************************")
+    println("===============================================================================================================")
     val process = builder.start()
-    process.onExit().get()
+    process.waitFor()
   }
 }

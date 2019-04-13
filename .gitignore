@@ -30,4 +30,5 @@ shared/.jvm
 journal
 snapshots
 .bloop
+.metals
 test-output/

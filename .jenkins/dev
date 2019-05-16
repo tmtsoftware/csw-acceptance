@@ -9,6 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git 'https://github.com/tmtsoftware/csw-acceptance.git'
+                sh "git checkout $SHA"
             }
         }
         stage('Acceptance Test') {

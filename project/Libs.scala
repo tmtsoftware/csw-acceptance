@@ -1,11 +1,10 @@
 import sbt._
 
 object Libs {
-  val ScalaVersion = "2.12.7"
+  val ScalaVersion = "2.12.8"
 
   val `scalatest`                = "org.scalatest"            %% "scalatest"                % "3.0.6" //Apache License 2.0
   val `junit`                    = "junit"                    % "junit"                     % "4.12" //Eclipse Public License 1.0
-  val `junit-interface`          = "com.novocode"             % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
   val `mockito-scala`            = "org.mockito"              %% "mockito-scala"            % "1.4.3"
   val `scalatest-embedded-kafka` = "net.manub"                %% "scalatest-embedded-kafka" % "1.1.0"
   val `embedded-redis`           = "com.github.kstyrc"        % "embedded-redis"            % "0.6"
@@ -113,6 +112,9 @@ object Akka {
   val `akka-stream-testkit`      = "com.typesafe.akka" %% "akka-stream-testkit" % Version
   val `akka-actor-testkit-typed` = "com.typesafe.akka" %% "akka-actor-testkit-typed" % Version
   val `akka-multi-node-testkit`  = "com.typesafe.akka" %% "akka-multi-node-testkit" % Version
+  val `akka-cluster-tools`       = "com.typesafe.akka" %% "akka-cluster-tools" % Version
+  val `akka-cluster`             = "com.typesafe.akka" %% "akka-cluster" % Version
+  val `akka-cluster-typed`       = "com.typesafe.akka" %% "akka-cluster-typed" % Version
 }
 
 object AkkaHttp {

@@ -7,7 +7,7 @@ object Libs {
   val `junit`                    = "junit"                    % "junit"                     % "4.12" //Eclipse Public License 1.0
   val `junit-interface`          = "com.novocode"             % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
   val `mockito-scala`            = "org.mockito"              %% "mockito-scala"            % "1.4.3"
-  val `scalatest-embedded-kafka` = "net.manub"                %% "scalatest-embedded-kafka" % "1.1.0"
+  val `scalatest-embedded-kafka` = "net.manub"                %% "scalatest-embedded-kafka" % "1.1.1"
   val `embedded-redis`           = "com.github.kstyrc"        % "embedded-redis"            % "0.6"
   val `otj-pg-embedded`          = "com.opentable.components" % "otj-pg-embedded"           % "0.13.1"
   val `testng`                   = "org.testng"               % "testng"                    % "6.14.3"

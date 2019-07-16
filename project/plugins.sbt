@@ -7,7 +7,7 @@ addSbtPlugin("com.dwijnand"      % "sbt-dynver"          % "3.3.0")
 resolvers += "Jenkins repo" at "http://repo.jenkins-ci.org/public/"
 addSbtPlugin("ohnosequences" % "sbt-github-release" % "0.7.0")
 
-addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.1.0-M13-4")
+addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.1.0-M14-4")
 
 classpathTypes += "maven-plugin"
 

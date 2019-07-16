@@ -11,7 +11,7 @@ addSbtPlugin("io.get-coursier" % "sbt-coursier" % "1.1.0-M13-4")
 
 classpathTypes += "maven-plugin"
 
-libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin"  % "0.7.4"
+libraryDependencies += "com.thesamet.scalapb" %% "compilerplugin"  % "0.9.0"
 libraryDependencies += "com.sun.activation"   % "javax.activation" % "1.2.0" // Required for jdk 11
 
 scalacOptions ++= Seq(

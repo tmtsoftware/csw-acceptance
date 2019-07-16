@@ -5,10 +5,9 @@ object Dependencies {
   val TestDependencies: Seq[ModuleID] = Seq(
     Libs.`scalatest`,
     Libs.`junit`,
-    Libs.`junit-interface`,
     Libs.`mockito-scala`,
     Libs.`gson`,
-    Libs.`scalatest-embedded-kafka`,
+//    Libs.`embedded-kafka`,
     Libs.`embedded-redis`,
     Libs.`otj-pg-embedded`,
     Akka.`akka-stream-testkit`,
@@ -98,7 +97,7 @@ object Dependencies {
 
   val Params: Seq[ModuleID] = Seq(
     CSW.`csw-params-tests`,
-    Chill.`chill-bijection`,
+//    Chill.`chill-bijection`,
     CSW.`csw-params`
   ) ++ TestDependencies ++ AllCswLibs
 
@@ -163,8 +162,6 @@ object Dependencies {
   ) ++ TestDependencies ++ AllCswLibs
 
   val CswRunner: Seq[ModuleID] = Seq(
-    Libs.`scalatest`,
-    Coursier.`coursier`,
-    Coursier.`coursier-cache`
+    Libs.`scalatest`
   )
 }

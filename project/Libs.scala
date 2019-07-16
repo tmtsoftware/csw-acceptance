@@ -1,23 +1,17 @@
 import sbt._
 
 object Libs {
-  val ScalaVersion = "2.12.8"
+  val ScalaVersion = "2.13.0"
 
-  val `scalatest`                = "org.scalatest"            %% "scalatest"                % "3.0.6" //Apache License 2.0
+  val `scalatest`                = "org.scalatest"            %% "scalatest"                % "3.0.8" //Apache License 2.0
   val `junit`                    = "junit"                    % "junit"                     % "4.12" //Eclipse Public License 1.0
-  val `junit-interface`          = "com.novocode"             % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
-  val `mockito-scala`            = "org.mockito"              %% "mockito-scala"            % "1.4.3"
-  val `scalatest-embedded-kafka` = "net.manub"                %% "scalatest-embedded-kafka" % "1.1.0"
+//  val `junit-interface`          = "com.novocode"             % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
+  val `mockito-scala`            = "org.mockito"              %% "mockito-scala"            % "1.5.11"
+//  val `embedded-kafka`           = "io.github.embeddedkafka"  %% "embedded-kafka"           % "2.3.0"
   val `embedded-redis`           = "com.github.kstyrc"        % "embedded-redis"            % "0.6"
   val `otj-pg-embedded`          = "com.opentable.components" % "otj-pg-embedded"           % "0.13.1"
   val `testng`                   = "org.testng"               % "testng"                    % "6.14.3"
   val `gson`                     = "com.google.code.gson"     % "gson"                      % "2.8.5" //Apache 2.0
-}
-
-object Chill {
-  val Version           = "0.9.3"
-  val `chill-akka`      = "com.twitter" %% "chill-akka" % Version //Apache License 2.0
-  val `chill-bijection` = "com.twitter" %% "chill-bijection" % Version //Apache License 2.0
 }
 
 object CSW {
@@ -121,10 +115,4 @@ object Akka {
 object AkkaHttp {
   val Version             = "10.1.8"
   val `akka-http-testkit` = "com.typesafe.akka" %% "akka-http-testkit" % Version //ApacheV2
-}
-
-object Coursier {
-  val Version          = "1.1.0-M13-2"
-  val `coursier`       = "io.get-coursier" %% "coursier" % Version
-  val `coursier-cache` = "io.get-coursier" %% "coursier-cache" % Version
 }

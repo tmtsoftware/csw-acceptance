@@ -51,7 +51,6 @@ object Dependencies {
 
   val LocationServer: Seq[ModuleID] = Seq(
     CSW.`csw-location-server-tests`,
-    CSW.`csw-location-server-multi-jvm`,
     CSW.`csw-location-server`,
     CSW.`csw-location-client`,
     CSW.`csw-config-server-tests`,
@@ -66,7 +65,6 @@ object Dependencies {
   val ConfigServer: Seq[ModuleID] = Seq(
     CSW.`csw-config-server-tests`,
     CSW.`csw-config-server`,
-    CSW.`csw-location-server-multi-jvm`
   ) ++ TestDependencies ++ AllCswLibs
 
   val ConfigApi: Seq[ModuleID] = Seq(
@@ -76,18 +74,13 @@ object Dependencies {
 
   val ConfigClient: Seq[ModuleID] = Seq(
     CSW.`csw-config-client-tests`,
-    CSW.`csw-config-client-multi-jvm`,
     CSW.`csw-location-server-tests`,
-    CSW.`csw-location-server-multi-jvm`,
-    CSW.`csw-config-server-tests`,
     CSW.`csw-config-server-tests`,
     CSW.`csw-config-client`
   ) ++ TestDependencies ++ AllCswLibs
 
   val ConfigCli: Seq[ModuleID] = Seq(
     CSW.`csw-config-cli-tests`,
-    CSW.`csw-config-cli-multi-jvm`,
-    CSW.`csw-location-server-multi-jvm`,
     CSW.`csw-config-server-tests`,
     CSW.`csw-config-cli`
   ) ++ TestDependencies ++ AllCswLibs
@@ -99,10 +92,8 @@ object Dependencies {
 
   val Framework: Seq[ModuleID] = Seq(
     CSW.`csw-framework-tests`,
-    CSW.`csw-framework-multi-jvm`,
     CSW.`csw-event-client-tests`,
     CSW.`csw-location-server-tests`,
-    CSW.`csw-location-server-multi-jvm`,
     CSW.`csw-config-server-tests`,
     CSW.`csw-framework`
   ) ++ TestDependencies ++ AllCswLibs
@@ -120,7 +111,6 @@ object Dependencies {
 
   val EventClient: Seq[ModuleID] = Seq(
     CSW.`csw-event-client-tests`,
-    CSW.`csw-event-client-multi-jvm`,
     CSW.`csw-event-client`,
     CSW.`csw-location-server-tests`
   ) ++ TestDependencies ++ AllCswLibs
@@ -181,4 +171,18 @@ object Dependencies {
   val CswRunner: Seq[ModuleID] = Seq(
     Libs.`scalatest`
   )
+
+  val CswMultiJvm: Seq[ModuleID] = Seq(
+    CSW.`csw-location-server-multi-jvm`,
+    CSW.`csw-config-client-multi-jvm`,
+    CSW.`csw-config-cli-multi-jvm`,
+    CSW.`csw-framework-multi-jvm`,
+    CSW.`csw-event-client-multi-jvm`,
+    CSW.`csw-aas-http-multi-jvm`,
+    CSW.`csw-location-server-tests`,
+    CSW.`csw-config-server-tests`,
+    CSW.`csw-config-client-tests`,
+    CSW.`csw-event-client-tests`
+
+  ) ++ TestDependencies ++ AllCswLibs
 }

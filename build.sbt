@@ -32,7 +32,7 @@ lazy val `admin-server` = project
   )
 
 lazy val `location-server` = project
-  .enablePlugins(DeployApp, AutoMultiJvm)
+  .enablePlugins(DeployApp)
   .dependsOn(`csw-runner`)
   .settings(
     libraryDependencies ++= Dependencies.LocationServer
@@ -60,14 +60,14 @@ lazy val `config-api` = project
   )
 
 lazy val `config-client` = project
-  .enablePlugins(DeployApp, AutoMultiJvm)
+  .enablePlugins(DeployApp)
   .dependsOn(`csw-runner`)
   .settings(
     libraryDependencies ++= Dependencies.ConfigClient
   )
 
 lazy val `config-cli` = project
-  .enablePlugins(DeployApp, AutoMultiJvm)
+  .enablePlugins(DeployApp)
   .dependsOn(`csw-runner`)
   .settings(
     libraryDependencies ++= Dependencies.ConfigCli
@@ -81,7 +81,7 @@ lazy val `logging` = project
   )
 
 lazy val `framework` = project
-  .enablePlugins(DeployApp, AutoMultiJvm)
+  .enablePlugins(DeployApp)
   .dependsOn(`csw-runner`)
   .settings(
     libraryDependencies ++= Dependencies.Framework
@@ -155,6 +155,12 @@ lazy val `database` = project
   .dependsOn(`csw-runner`)
   .settings(
     libraryDependencies ++= Dependencies.Database
+  )
+
+lazy val `csw-multi-jvm` = project
+  .enablePlugins(DeployApp, AutoMultiJvm)
+  .settings(
+    libraryDependencies ++= Dependencies.CswMultiJvm
   )
 
 lazy val `csw-runner` = project

@@ -26,7 +26,7 @@ Before running any tests, make sure that you have correct env variables setup ba
 
 | Env var | Value | Description |
 |  -----  | ----- |    -----    |
-| CSW_VERSION | Ex. 0.6.0 | CSW libraries of this version will be pulled. Will pickup CSW_VERSION if it is set else will default to 0.1-SNAPSHOT
+| CSW_VERSION | Ex. 1.0.0 | CSW libraries of this version will be pulled. Will pickup CSW_VERSION if it is set else will default to 0.1-SNAPSHOT
 
 
 ## Running Tests

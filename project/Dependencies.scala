@@ -15,7 +15,8 @@ object Dependencies {
     Akka.`akka-multi-node-testkit`,
     AkkaHttp.`akka-http-testkit`,
     Libs.`testng`,
-    CSW.`csw-commons-tests`
+    CSW.`csw-commons-tests`,
+    Libs.`embedded-keycloak`
   )
 
   val AllCswLibs: Seq[ModuleID] = Seq(
@@ -50,6 +51,7 @@ object Dependencies {
 
   val LocationServer: Seq[ModuleID] = Seq(
     CSW.`csw-location-server-tests`,
+    CSW.`csw-location-server-multi-jvm`,
     CSW.`csw-location-server`,
     CSW.`csw-location-client`,
     CSW.`csw-config-server-tests`,
@@ -63,7 +65,8 @@ object Dependencies {
 
   val ConfigServer: Seq[ModuleID] = Seq(
     CSW.`csw-config-server-tests`,
-    CSW.`csw-config-server`
+    CSW.`csw-config-server`,
+    CSW.`csw-location-server-multi-jvm`
   ) ++ TestDependencies ++ AllCswLibs
 
   val ConfigApi: Seq[ModuleID] = Seq(
@@ -73,13 +76,19 @@ object Dependencies {
 
   val ConfigClient: Seq[ModuleID] = Seq(
     CSW.`csw-config-client-tests`,
+    CSW.`csw-config-client-multi-jvm`,
     CSW.`csw-location-server-tests`,
+    CSW.`csw-location-server-multi-jvm`,
+    CSW.`csw-config-server-tests`,
     CSW.`csw-config-server-tests`,
     CSW.`csw-config-client`
   ) ++ TestDependencies ++ AllCswLibs
 
   val ConfigCli: Seq[ModuleID] = Seq(
     CSW.`csw-config-cli-tests`,
+    CSW.`csw-config-cli-multi-jvm`,
+    CSW.`csw-location-server-multi-jvm`,
+    CSW.`csw-config-server-tests`,
     CSW.`csw-config-cli`
   ) ++ TestDependencies ++ AllCswLibs
 
@@ -90,8 +99,11 @@ object Dependencies {
 
   val Framework: Seq[ModuleID] = Seq(
     CSW.`csw-framework-tests`,
+    CSW.`csw-framework-multi-jvm`,
     CSW.`csw-event-client-tests`,
     CSW.`csw-location-server-tests`,
+    CSW.`csw-location-server-multi-jvm`,
+    CSW.`csw-config-server-tests`,
     CSW.`csw-framework`
   ) ++ TestDependencies ++ AllCswLibs
 
@@ -108,6 +120,7 @@ object Dependencies {
 
   val EventClient: Seq[ModuleID] = Seq(
     CSW.`csw-event-client-tests`,
+    CSW.`csw-event-client-multi-jvm`,
     CSW.`csw-event-client`,
     CSW.`csw-location-server-tests`
   ) ++ TestDependencies ++ AllCswLibs
@@ -140,9 +153,13 @@ object Dependencies {
     CSW.`csw-aas-core-tests`,
     CSW.`csw-aas-http-tests`,
     CSW.`csw-aas-installed-tests`,
+    CSW.`csw-aas-http-multi-jvm`,
+    CSW.`csw-location-server-multi-jvm`,
     CSW.`csw-aas-core`,
     CSW.`csw-aas-http`,
-    CSW.`csw-aas-installed`
+    CSW.`csw-aas-installed`,
+    Libs.`play-json-derived-codecs`,
+    Libs.`akka-http-play-json`
   ) ++ TestDependencies ++ AllCswLibs
 
   val Time: Seq[ModuleID] = Seq(

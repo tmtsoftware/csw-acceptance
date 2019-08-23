@@ -16,14 +16,18 @@ pipeline {
                 sh "./run-all.sh"
             }
         }
-
+        stage('Multi-Jvm Test') {
+            steps {
+                sh "sbt csw-multi-jvm/multi-jvm:test"
+                sh "sbt aas/multi-jvm:test"
+            }
+        }
         stage('Git Tag') {
             steps {
                 sh "git tag v$CSW_VERSION"
                 sh "git push origin v$CSW_VERSION"
             }
         }
-
         stage('Release') {
             steps {
                 sh "sbt -Dprod.publish=true githubRelease"
@@ -60,10 +64,10 @@ def sendNotification(String buildStatus = 'STARTED') {
         color = 'RED'
         colorCode = '#FF0000'
         emailext(
-                    subject: subject,
-                    body: details,
-                    to: "tmt-csw@thoughtworks.com"
-            )
+                subject: subject,
+                body: details,
+                to: "tmt-csw@thoughtworks.com"
+        )
     }
 
     slackSend(channel: "#acceptance-dev", color: colorCode, message: summary)

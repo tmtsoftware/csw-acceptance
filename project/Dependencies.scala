@@ -179,6 +179,7 @@ object Dependencies {
     CSW.`csw-framework-multi-jvm`,
     CSW.`csw-event-client-multi-jvm`,
     CSW.`csw-aas-http-multi-jvm`,
+    CSW.`csw-framework-tests`,
     CSW.`csw-location-server-tests`,
     CSW.`csw-config-server-tests`,
     CSW.`csw-config-client-tests`,

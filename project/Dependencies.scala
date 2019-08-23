@@ -145,6 +145,7 @@ object Dependencies {
     CSW.`csw-aas-installed-tests`,
     CSW.`csw-aas-http-multi-jvm`,
     CSW.`csw-location-server-multi-jvm`,
+    CSW.`csw-location-server-tests`,
     CSW.`csw-aas-core`,
     CSW.`csw-aas-http`,
     CSW.`csw-aas-installed`,

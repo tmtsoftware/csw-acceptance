@@ -1,0 +1,7 @@
+package csw.aas.runner
+
+import csw.aas.http.AuthIntegrationTest
+
+class AuthIntegrationTestMultiJvmNode1 extends AuthIntegrationTest
+class AuthIntegrationTestMultiJvmNode2 extends AuthIntegrationTest
+class AuthIntegrationTestMultiJvmNode3 extends AuthIntegrationTest

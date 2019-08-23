@@ -3,15 +3,19 @@ import sbt._
 object Libs {
   val ScalaVersion = "2.13.0"
 
-  val `scalatest`                = "org.scalatest"            %% "scalatest"                % "3.0.8" //Apache License 2.0
-  val `junit`                    = "junit"                    % "junit"                     % "4.12" //Eclipse Public License 1.0
+  val `scalatest` = "org.scalatest" %% "scalatest" % "3.0.8" //Apache License 2.0
+  val `junit`     = "junit"         % "junit"      % "4.12"  //Eclipse Public License 1.0
 //  val `junit-interface`          = "com.novocode"             % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
-  val `mockito-scala`            = "org.mockito"              %% "mockito-scala"            % "1.5.14"
+  val `mockito-scala` = "org.mockito" %% "mockito-scala" % "1.5.13"
 //  val `embedded-kafka`           = "io.github.embeddedkafka"  %% "embedded-kafka"           % "2.3.0"
-  val `embedded-redis`           = "com.github.kstyrc"        % "embedded-redis"            % "0.6"
-  val `otj-pg-embedded`          = "com.opentable.components" % "otj-pg-embedded"           % "0.13.1"
-  val `testng`                   = "org.testng"               % "testng"                    % "6.14.3"
-  val `gson`                     = "com.google.code.gson"     % "gson"                      % "2.8.5" //Apache 2.0
+  val `embedded-redis`  = "com.github.kstyrc"        % "embedded-redis"  % "0.6"
+  val `otj-pg-embedded` = "com.opentable.components" % "otj-pg-embedded" % "0.13.1"
+  val `testng`          = "org.testng"               % "testng"          % "6.14.3"
+  val `gson`            = "com.google.code.gson"     % "gson"            % "2.8.5" //Apache 2.0
+
+  val `embedded-keycloak`        = "com.github.tmtsoftware.embedded-keycloak" %% "embedded-keycloak"        % "0.1.6" //Apache 2.0
+  val `akka-http-play-json`      = "de.heikoseeberger"                        %% "akka-http-play-json"      % "1.27.0" //Apache 2.0
+  val `play-json-derived-codecs` = "org.julienrf"                             %% "play-json-derived-codecs" % "6.0.0"
 }
 
 object CSW {
@@ -23,8 +27,9 @@ object CSW {
   val `csw-admin-server`       = "com.github.tmtsoftware.csw" %% "csw-admin-server" % Version
   val `csw-admin-server-tests` = "com.github.tmtsoftware.csw" %% "csw-admin-server" % Version classifier "tests"
 
-  val `csw-location-server`       = "com.github.tmtsoftware.csw" %% "csw-location-server" % Version
-  val `csw-location-server-tests` = "com.github.tmtsoftware.csw" %% "csw-location-server" % Version classifier "tests"
+  val `csw-location-server`           = "com.github.tmtsoftware.csw" %% "csw-location-server" % Version
+  val `csw-location-server-tests`     = "com.github.tmtsoftware.csw" %% "csw-location-server" % Version classifier "tests"
+  val `csw-location-server-multi-jvm` = "com.github.tmtsoftware.csw" %% "csw-location-server" % Version classifier "multi-jvm"
 
   val `csw-location-client`       = "com.github.tmtsoftware.csw" %% "csw-location-client" % Version
   val `csw-location-client-tests` = "com.github.tmtsoftware.csw" %% "csw-location-client" % Version classifier "tests"
@@ -35,11 +40,13 @@ object CSW {
   val `csw-config-api`       = "com.github.tmtsoftware.csw" %% "csw-config-api" % Version
   val `csw-config-api-tests` = "com.github.tmtsoftware.csw" %% "csw-config-api" % Version classifier "tests"
 
-  val `csw-config-client`       = "com.github.tmtsoftware.csw" %% "csw-config-client" % Version
-  val `csw-config-client-tests` = "com.github.tmtsoftware.csw" %% "csw-config-client" % Version classifier "tests"
+  val `csw-config-client`           = "com.github.tmtsoftware.csw" %% "csw-config-client" % Version
+  val `csw-config-client-tests`     = "com.github.tmtsoftware.csw" %% "csw-config-client" % Version classifier "tests"
+  val `csw-config-client-multi-jvm` = "com.github.tmtsoftware.csw" %% "csw-config-client" % Version classifier "multi-jvm"
 
-  val `csw-config-cli`       = "com.github.tmtsoftware.csw" %% "csw-config-cli" % Version
-  val `csw-config-cli-tests` = "com.github.tmtsoftware.csw" %% "csw-config-cli" % Version classifier "tests"
+  val `csw-config-cli`           = "com.github.tmtsoftware.csw" %% "csw-config-cli" % Version
+  val `csw-config-cli-tests`     = "com.github.tmtsoftware.csw" %% "csw-config-cli" % Version classifier "tests"
+  val `csw-config-cli-multi-jvm` = "com.github.tmtsoftware.csw" %% "csw-config-cli" % Version classifier "multi-jvm"
 
   val `csw-logging`       = "com.github.tmtsoftware.csw" %% "csw-logging-client" % Version
   val `csw-logging-tests` = "com.github.tmtsoftware.csw" %% "csw-logging-client" % Version classifier "tests"
@@ -50,11 +57,12 @@ object CSW {
   val `csw-network-utils`       = "com.github.tmtsoftware.csw" %% "csw-network-utils" % Version
   val `csw-network-utils-tests` = "com.github.tmtsoftware.csw" %% "csw-network-utils" % Version classifier "tests"
 
-  val `csw-framework`       = "com.github.tmtsoftware.csw" %% "csw-framework" % Version
-  val `csw-framework-tests` = "com.github.tmtsoftware.csw" %% "csw-framework" % Version classifier "tests"
+  val `csw-framework`           = "com.github.tmtsoftware.csw" %% "csw-framework" % Version
+  val `csw-framework-tests`     = "com.github.tmtsoftware.csw" %% "csw-framework" % Version classifier "tests"
+  val `csw-framework-multi-jvm` = "com.github.tmtsoftware.csw" %% "csw-framework" % Version classifier "multi-jvm"
 
-  val `csw-command-client`       = "com.github.tmtsoftware.csw" %% "csw-command-client" % Version
-  val `csw-command-client-tests` = "com.github.tmtsoftware.csw" %% "csw-command-client" % Version classifier "tests"
+  val `csw-command-client`           = "com.github.tmtsoftware.csw" %% "csw-command-client" % Version
+  val `csw-command-client-tests`     = "com.github.tmtsoftware.csw" %% "csw-command-client" % Version classifier "tests"
 
   val `csw-params`       = "com.github.tmtsoftware.csw" %% "csw-params" % Version
   val `csw-params-tests` = "com.github.tmtsoftware.csw" %% "csw-params" % Version classifier "tests"
@@ -64,8 +72,9 @@ object CSW {
 
   val `csw-event-api` = "com.github.tmtsoftware.csw" %% "csw-event-api" % Version
 
-  val `csw-event-client`       = "com.github.tmtsoftware.csw" %% "csw-event-client" % Version
-  val `csw-event-client-tests` = "com.github.tmtsoftware.csw" %% "csw-event-client" % Version classifier "tests"
+  val `csw-event-client`           = "com.github.tmtsoftware.csw" %% "csw-event-client" % Version
+  val `csw-event-client-tests`     = "com.github.tmtsoftware.csw" %% "csw-event-client" % Version classifier "tests"
+  val `csw-event-client-multi-jvm` = "com.github.tmtsoftware.csw" %% "csw-event-client" % Version classifier "multi-jvm"
 
   val `csw-event-cli`       = "com.github.tmtsoftware.csw" %% "csw-event-cli" % Version
   val `csw-event-cli-tests` = "com.github.tmtsoftware.csw" %% "csw-event-cli" % Version classifier "tests"
@@ -82,8 +91,9 @@ object CSW {
   val `csw-aas-core`       = "com.github.tmtsoftware.csw" %% "csw-aas-core" % Version
   val `csw-aas-core-tests` = "com.github.tmtsoftware.csw" %% "csw-aas-core" % Version classifier "tests"
 
-  val `csw-aas-http`       = "com.github.tmtsoftware.csw" %% "csw-aas-http" % Version
-  val `csw-aas-http-tests` = "com.github.tmtsoftware.csw" %% "csw-aas-http" % Version classifier "tests"
+  val `csw-aas-http`           = "com.github.tmtsoftware.csw" %% "csw-aas-http" % Version
+  val `csw-aas-http-tests`     = "com.github.tmtsoftware.csw" %% "csw-aas-http" % Version classifier "tests"
+  val `csw-aas-http-multi-jvm` = "com.github.tmtsoftware.csw" %% "csw-aas-http" % Version classifier "multi-jvm"
 
   val `csw-aas-installed`       = "com.github.tmtsoftware.csw" %% "csw-aas-installed" % Version
   val `csw-aas-installed-tests` = "com.github.tmtsoftware.csw" %% "csw-aas-installed" % Version classifier "tests"

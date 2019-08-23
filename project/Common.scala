@@ -42,7 +42,7 @@ object Common extends AutoPlugin {
       Tests.Argument(TestFrameworks.JUnit, "-v", "-a")
     ),
     resolvers += Resolver.bintrayRepo("twtmt", "maven"),
-    resolvers += "bintray" at "http://jcenter.bintray.com",
+    resolvers += "bintray" at "https://jcenter.bintray.com",
     resolvers += "jitpack" at "https://jitpack.io",
     version := {
       sys.props.get("prod.publish") match {

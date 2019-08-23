@@ -64,7 +64,7 @@ object Dependencies {
 
   val ConfigServer: Seq[ModuleID] = Seq(
     CSW.`csw-config-server-tests`,
-    CSW.`csw-config-server`,
+    CSW.`csw-config-server`
   ) ++ TestDependencies ++ AllCswLibs
 
   val ConfigApi: Seq[ModuleID] = Seq(

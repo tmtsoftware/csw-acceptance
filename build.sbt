@@ -1,21 +1,18 @@
 lazy val aggregatedProjects: Seq[ProjectReference] = Seq(
+  `aas`,
   `admin-server`,
-  `location-server`,
-  `location-agent`,
-  `config-server`,
-  `config-api`,
-  `config-client`,
-  `config-cli`,
-  `logging`,
+  `alarm`,
+  `command`,
+  `config`,
+  `database`,
+  `event`,
   `framework`,
+  `location`,
+  `logging`,
+  `network-utils`,
   `params`,
-  `command-client`,
-  `event-client`,
-  `event-cli`,
-  `alarm-api`,
-  `alarm-client`,
-  `alarm-cli`,
-  `aas`
+  `testkit`,
+  `time`
 )
 
 lazy val `csw-acceptance` = project
@@ -31,46 +28,18 @@ lazy val `admin-server` = project
     libraryDependencies ++= Dependencies.AdminServer
   )
 
-lazy val `location-server` = project
+lazy val `location` = project
   .enablePlugins(DeployApp)
   .dependsOn(`csw-runner`)
   .settings(
-    libraryDependencies ++= Dependencies.LocationServer
+    libraryDependencies ++= Dependencies.Location
   )
 
-lazy val `location-agent` = project
+lazy val `config` = project
   .enablePlugins(DeployApp)
   .dependsOn(`csw-runner`)
   .settings(
-    libraryDependencies ++= Dependencies.LocationAgent
-  )
-
-lazy val `config-server` = project
-  .enablePlugins(DeployApp)
-  .dependsOn(`csw-runner`)
-  .settings(
-    libraryDependencies ++= Dependencies.ConfigServer
-  )
-
-lazy val `config-api` = project
-  .enablePlugins(DeployApp)
-  .dependsOn(`csw-runner`)
-  .settings(
-    libraryDependencies ++= Dependencies.ConfigApi
-  )
-
-lazy val `config-client` = project
-  .enablePlugins(DeployApp)
-  .dependsOn(`csw-runner`)
-  .settings(
-    libraryDependencies ++= Dependencies.ConfigClient
-  )
-
-lazy val `config-cli` = project
-  .enablePlugins(DeployApp)
-  .dependsOn(`csw-runner`)
-  .settings(
-    libraryDependencies ++= Dependencies.ConfigCli
+    libraryDependencies ++= Dependencies.Config
   )
 
 lazy val `logging` = project
@@ -94,46 +63,25 @@ lazy val `params` = project
     libraryDependencies ++= Dependencies.Params
   )
 
-lazy val `command-client` = project
+lazy val `command` = project
   .enablePlugins(DeployApp)
   .dependsOn(`csw-runner`)
   .settings(
-    libraryDependencies ++= Dependencies.CommandClient
+    libraryDependencies ++= Dependencies.Command
   )
 
-lazy val `event-client` = project
+lazy val `event` = project
   .enablePlugins(DeployApp)
   .dependsOn(`csw-runner`)
   .settings(
-    libraryDependencies ++= Dependencies.EventClient
+    libraryDependencies ++= Dependencies.Event
   )
 
-lazy val `event-cli` = project
+lazy val `alarm` = project
   .enablePlugins(DeployApp)
   .dependsOn(`csw-runner`)
   .settings(
-    libraryDependencies ++= Dependencies.EventCli
-  )
-
-lazy val `alarm-api` = project
-  .enablePlugins(DeployApp)
-  .dependsOn(`csw-runner`)
-  .settings(
-    libraryDependencies ++= Dependencies.AlarmApi
-  )
-
-lazy val `alarm-client` = project
-  .enablePlugins(DeployApp)
-  .dependsOn(`csw-runner`)
-  .settings(
-    libraryDependencies ++= Dependencies.AlarmClient
-  )
-
-lazy val `alarm-cli` = project
-  .enablePlugins(DeployApp)
-  .dependsOn(`csw-runner`)
-  .settings(
-    libraryDependencies ++= Dependencies.AlarmCli
+    libraryDependencies ++= Dependencies.Alarm
   )
 
 lazy val `aas` = project
@@ -155,6 +103,27 @@ lazy val `database` = project
   .dependsOn(`csw-runner`)
   .settings(
     libraryDependencies ++= Dependencies.Database
+  )
+
+lazy val `examples` = project
+  .enablePlugins(DeployApp)
+  .dependsOn(`csw-runner`)
+  .settings(
+    libraryDependencies ++= Dependencies.Examples
+  )
+
+lazy val `network-utils` = project
+  .enablePlugins(DeployApp)
+  .dependsOn(`csw-runner`)
+  .settings(
+    libraryDependencies ++= Dependencies.Utils
+  )
+
+lazy val `testkit` = project
+  .enablePlugins(DeployApp)
+  .dependsOn(`csw-runner`)
+  .settings(
+    libraryDependencies ++= Dependencies.Testkit
   )
 
 lazy val `csw-multi-jvm` = project

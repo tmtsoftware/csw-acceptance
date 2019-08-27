@@ -8,7 +8,7 @@ class AcceptanceTestRunner(testProjectName: String) {
     System
       .getProperty("java.class.path")
       .split(":")
-      .find(x => x.contains(testProjectName) && x.contains("tests.jar"))
+      .find(x => x.contains(testProjectName + "_") && x.contains("tests.jar"))
       .getOrElse("")
 
   def run(): Boolean = runTests(scalaTestParams)

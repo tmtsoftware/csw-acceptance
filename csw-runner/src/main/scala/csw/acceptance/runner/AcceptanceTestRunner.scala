@@ -21,10 +21,6 @@ class AcceptanceTestRunner(testProjectName: String) {
     "-oDF",
     "-C",
     "csw.acceptance.runner.FileAcceptanceTestReporter",
-    "-l",
-    "csw.commons.tags.FileSystemSensitive",
-    "-l",
-    "csw.commons.tags.LoggingSystemSensitive",
     "-R",
     testJarRunpath
   )

@@ -131,7 +131,9 @@ object Dependencies {
     CSW.`csw-alarm-api`,
     CSW.`csw-alarm-models`,
     CSW.`csw-logging-client-tests`,
-    CSW.`csw-location-server-tests`
+    CSW.`csw-location-server-tests`,
+    CSW.`csw-config-server-tests`,
+    CSW.`csw-commons-tests`
   ) ++ TestDependencies ++ AllCswLibs
 
   val Aas: Seq[ModuleID] = Seq(

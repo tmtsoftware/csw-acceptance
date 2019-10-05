@@ -11,7 +11,7 @@ object Libs {
   val `embedded-redis`  = "com.github.kstyrc"        % "embedded-redis"  % "0.6"
   val `otj-pg-embedded` = "com.opentable.components" % "otj-pg-embedded" % "0.13.1"
   val `testng`          = "org.testng"               % "testng"          % "6.14.3"
-  val `gson`            = "com.google.code.gson"     % "gson"            % "2.8.5" //Apache 2.0
+  val `gson`            = "com.google.code.gson"     % "gson"            % "2.8.6" //Apache 2.0
 
   val `embedded-keycloak`        = "com.github.tmtsoftware.embedded-keycloak" %% "embedded-keycloak"        % "0.1.6" //Apache 2.0
   val `akka-http-play-json`      = "de.heikoseeberger"                        %% "akka-http-play-json"      % "1.27.0" //Apache 2.0

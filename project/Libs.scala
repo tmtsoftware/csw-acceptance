@@ -9,7 +9,7 @@ object Libs {
   val `mockito-scala` = "org.mockito" %% "mockito-scala" % "1.5.13"
 //  val `embedded-kafka`           = "io.github.embeddedkafka"  %% "embedded-kafka"           % "2.3.0"
   val `embedded-redis`  = "com.github.kstyrc"        % "embedded-redis"  % "0.6"
-  val `otj-pg-embedded` = "com.opentable.components" % "otj-pg-embedded" % "0.13.1"
+  val `otj-pg-embedded` = "com.opentable.components" % "otj-pg-embedded" % "0.13.3"
   val `testng`          = "org.testng"               % "testng"          % "6.14.3"
   val `gson`            = "com.google.code.gson"     % "gson"            % "2.8.5" //Apache 2.0
 

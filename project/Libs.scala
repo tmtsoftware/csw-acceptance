@@ -156,7 +156,7 @@ object CSW {
 }
 
 object Akka {
-  val Version                    = "2.5.25" //all akka is Apache License 2.0
+  val Version                    = "2.6.0-RC1" //all akka is Apache License 2.0
   val `akka-actor`               = "com.typesafe.akka" %% "akka-actor" % Version
   val `akka-stream-testkit`      = "com.typesafe.akka" %% "akka-stream-testkit" % Version
   val `akka-actor-testkit-typed` = "com.typesafe.akka" %% "akka-actor-testkit-typed" % Version
@@ -167,6 +167,7 @@ object Akka {
 }
 
 object AkkaHttp {
-  val Version             = "10.1.8"
-  val `akka-http-testkit` = "com.typesafe.akka" %% "akka-http-testkit" % Version //ApacheV2
+  val Version                = "10.1.10"
+  val `akka-http-testkit`    = "com.typesafe.akka" %% "akka-http-testkit" % Version //ApacheV2
+  val `akka-http-spray-json` = "com.typesafe.akka" %% "akka-http-spray-json" % Version
 }

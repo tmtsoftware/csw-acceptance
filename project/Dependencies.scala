@@ -15,7 +15,8 @@ object Dependencies {
     Akka.`akka-multi-node-testkit`,
     AkkaHttp.`akka-http-testkit`,
     Libs.`testng`,
-    CSW.`csw-commons-tests`
+    CSW.`csw-commons-tests`,
+    Libs.`embedded-keycloak`
   )
 
   val AllCswLibs: Seq[ModuleID] = Seq(
@@ -27,7 +28,7 @@ object Dependencies {
     CSW.`csw-config-api`,
     CSW.`csw-config-client`,
     CSW.`csw-config-cli`,
-    CSW.`csw-logging`,
+    CSW.`csw-logging-client`,
     CSW.`csw-params`,
     CSW.`csw-framework`,
     CSW.`csw-command-client`,
@@ -48,50 +49,50 @@ object Dependencies {
     CSW.`csw-config-server-tests`
   ) ++ TestDependencies ++ AllCswLibs
 
-  val LocationServer: Seq[ModuleID] = Seq(
+  val Location: Seq[ModuleID] = Seq(
+    CSW.`csw-location-api-tests`,
+    CSW.`csw-location-models-tests`,
+    CSW.`csw-location-client-tests`,
     CSW.`csw-location-server-tests`,
+    CSW.`csw-location-agent-tests`,
+    CSW.`csw-commons-tests`,
+    CSW.`csw-testkit`,
+    CSW.`csw-location-api`,
+    CSW.`csw-location-models`,
     CSW.`csw-location-server`,
     CSW.`csw-location-client`,
+    CSW.`csw-location-agent`,
     CSW.`csw-config-server-tests`,
     CSW.`csw-framework-tests`
   ) ++ TestDependencies ++ AllCswLibs
 
-  val LocationAgent: Seq[ModuleID] = Seq(
-    CSW.`csw-location-agent-tests`,
-    CSW.`csw-location-agent`
-  ) ++ TestDependencies ++ AllCswLibs
-
-  val ConfigServer: Seq[ModuleID] = Seq(
-    CSW.`csw-config-server-tests`,
-    CSW.`csw-config-server`
-  ) ++ TestDependencies ++ AllCswLibs
-
-  val ConfigApi: Seq[ModuleID] = Seq(
+  val Config: Seq[ModuleID] = Seq(
     CSW.`csw-config-api-tests`,
-    CSW.`csw-config-api`
-  ) ++ TestDependencies ++ AllCswLibs
-
-  val ConfigClient: Seq[ModuleID] = Seq(
+    CSW.`csw-config-models-tests`,
     CSW.`csw-config-client-tests`,
-    CSW.`csw-location-server-tests`,
-    CSW.`csw-config-server-tests`,
-    CSW.`csw-config-client`
-  ) ++ TestDependencies ++ AllCswLibs
-
-  val ConfigCli: Seq[ModuleID] = Seq(
     CSW.`csw-config-cli-tests`,
+    CSW.`csw-config-server-tests`,
+    CSW.`csw-location-server-tests`,
+    CSW.`csw-config-api`,
+    CSW.`csw-config-models`,
+    CSW.`csw-config-client`,
     CSW.`csw-config-cli`
   ) ++ TestDependencies ++ AllCswLibs
 
   val Logging: Seq[ModuleID] = Seq(
-    CSW.`csw-logging-tests`,
-    CSW.`csw-logging`
+    CSW.`csw-logging-api-tests`,
+    CSW.`csw-logging-models-tests`,
+    CSW.`csw-logging-client-tests`,
+    CSW.`csw-logging-api`,
+    CSW.`csw-logging-models`,
+    CSW.`csw-logging-client`
   ) ++ TestDependencies ++ AllCswLibs
 
   val Framework: Seq[ModuleID] = Seq(
     CSW.`csw-framework-tests`,
     CSW.`csw-event-client-tests`,
     CSW.`csw-location-server-tests`,
+    CSW.`csw-config-server-tests`,
     CSW.`csw-framework`
   ) ++ TestDependencies ++ AllCswLibs
 
@@ -101,48 +102,52 @@ object Dependencies {
     CSW.`csw-params`
   ) ++ TestDependencies ++ AllCswLibs
 
-  val CommandClient: Seq[ModuleID] = Seq(
+  val Command: Seq[ModuleID] = Seq(
     CSW.`csw-command-client-tests`,
+    CSW.`csw-command-api-tests`,
+    CSW.`csw-location-server-tests`,
+    CSW.`csw-location-client-tests`,
+    CSW.`csw-commons-tests`,
     CSW.`csw-command-client`
   ) ++ TestDependencies ++ AllCswLibs
 
-  val EventClient: Seq[ModuleID] = Seq(
-    CSW.`csw-event-client-tests`,
-    CSW.`csw-event-client`,
-    CSW.`csw-location-server-tests`
-  ) ++ TestDependencies ++ AllCswLibs
-
-  val EventCli: Seq[ModuleID] = Seq(
+  val Event: Seq[ModuleID] = Seq(
+    CSW.`csw-event-api-tests`,
     CSW.`csw-event-cli-tests`,
+    CSW.`csw-event-client-tests`,
+    CSW.`csw-event-client-multi-jvm`,
+    CSW.`csw-location-server-tests`,
+    CSW.`csw-commons-tests`,
+    CSW.`csw-config-server-tests`,
+    CSW.`csw-event-client`,
     CSW.`csw-event-cli`
   ) ++ TestDependencies ++ AllCswLibs
 
-  val AlarmApi: Seq[ModuleID] = Seq(
+  val Alarm: Seq[ModuleID] = Seq(
+    CSW.`csw-alarm-models-test`,
     CSW.`csw-alarm-api-tests`,
-    CSW.`csw-alarm-api`
-  ) ++ TestDependencies ++ AllCswLibs
-
-  val AlarmClient: Seq[ModuleID] = Seq(
     CSW.`csw-alarm-client-tests`,
-    CSW.`csw-alarm-client`,
-    CSW.`csw-logging-tests`,
-    CSW.`csw-location-server-tests`
-  ) ++ TestDependencies ++ AllCswLibs
-
-  val AlarmCli: Seq[ModuleID] = Seq(
     CSW.`csw-alarm-cli-tests`,
-    CSW.`csw-alarm-cli`,
+    CSW.`csw-alarm-api`,
+    CSW.`csw-alarm-models`,
+    CSW.`csw-logging-client-tests`,
     CSW.`csw-location-server-tests`,
-    CSW.`csw-config-server-tests`
+    CSW.`csw-config-server-tests`,
+    CSW.`csw-commons-tests`
   ) ++ TestDependencies ++ AllCswLibs
 
   val Aas: Seq[ModuleID] = Seq(
     CSW.`csw-aas-core-tests`,
     CSW.`csw-aas-http-tests`,
     CSW.`csw-aas-installed-tests`,
+    CSW.`csw-aas-http-multi-jvm`,
+    CSW.`csw-location-server-multi-jvm`,
+    CSW.`csw-location-server-tests`,
     CSW.`csw-aas-core`,
     CSW.`csw-aas-http`,
-    CSW.`csw-aas-installed`
+    CSW.`csw-aas-installed`,
+    Libs.`play-json-derived-codecs`,
+    Libs.`akka-http-play-json`
   ) ++ TestDependencies ++ AllCswLibs
 
   val Time: Seq[ModuleID] = Seq(
@@ -161,7 +166,40 @@ object Dependencies {
     Akka.`akka-actor`
   ) ++ TestDependencies ++ AllCswLibs
 
+  val Examples: Seq[ModuleID] = Seq(
+    CSW.`examples-tests`,
+    CSW.`examples`,
+    CSW.`csw-config-server-tests`,
+    CSW.`csw-testkit`
+  ) ++ TestDependencies ++ AllCswLibs
+
+  val Utils: Seq[ModuleID] = Seq(
+    CSW.`csw-network-utils-tests`,
+    CSW.`csw-commons-tests`,
+    CSW.`csw-network-utils`,
+    CSW.`csw-commons`
+  ) ++ TestDependencies ++ AllCswLibs
+
+  val Testkit: Seq[ModuleID] = Seq(
+    CSW.`csw-testkit-tests`,
+    CSW.`csw-testkit`
+  ) ++ TestDependencies ++ AllCswLibs
+
   val CswRunner: Seq[ModuleID] = Seq(
     Libs.`scalatest`
   )
+
+  val CswMultiJvm: Seq[ModuleID] = Seq(
+    CSW.`csw-location-server-multi-jvm`,
+    CSW.`csw-config-client-multi-jvm`,
+    CSW.`csw-config-cli-multi-jvm`,
+    CSW.`csw-framework-multi-jvm`,
+    CSW.`csw-event-client-multi-jvm`,
+    CSW.`csw-aas-http-multi-jvm`,
+    CSW.`csw-framework-tests`,
+    CSW.`csw-location-server-tests`,
+    CSW.`csw-config-server-tests`,
+    CSW.`csw-config-client-tests`,
+    CSW.`csw-event-client-tests`
+  ) ++ TestDependencies ++ AllCswLibs
 }

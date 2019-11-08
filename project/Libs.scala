@@ -6,12 +6,12 @@ object Libs {
   val `scalatest` = "org.scalatest" %% "scalatest" % "3.0.8" //Apache License 2.0
   val `junit`     = "junit"         % "junit"      % "4.12"  //Eclipse Public License 1.0
 //  val `junit-interface`          = "com.novocode"             % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
-  val `mockito-scala` = "org.mockito" %% "mockito-scala" % "1.5.13"
+  val `mockito-scala` = "org.mockito" %% "mockito-scala" % "1.7.1"
 //  val `embedded-kafka`           = "io.github.embeddedkafka"  %% "embedded-kafka"           % "2.3.0"
   val `embedded-redis`  = "com.github.kstyrc"        % "embedded-redis"  % "0.6"
-  val `otj-pg-embedded` = "com.opentable.components" % "otj-pg-embedded" % "0.13.1"
+  val `otj-pg-embedded` = "com.opentable.components" % "otj-pg-embedded" % "0.13.3"
   val `testng`          = "org.testng"               % "testng"          % "6.14.3"
-  val `gson`            = "com.google.code.gson"     % "gson"            % "2.8.5" //Apache 2.0
+  val `gson`            = "com.google.code.gson"     % "gson"            % "2.8.6" //Apache 2.0
 
   val `embedded-keycloak`        = "com.github.tmtsoftware.embedded-keycloak" %% "embedded-keycloak"        % "0.1.6" //Apache 2.0
   val `akka-http-play-json`      = "de.heikoseeberger"                        %% "akka-http-play-json"      % "1.27.0" //Apache 2.0
@@ -156,7 +156,7 @@ object CSW {
 }
 
 object Akka {
-  val Version                    = "2.5.25" //all akka is Apache License 2.0
+  val Version                    = "2.6.0" //all akka is Apache License 2.0
   val `akka-actor`               = "com.typesafe.akka" %% "akka-actor" % Version
   val `akka-stream-testkit`      = "com.typesafe.akka" %% "akka-stream-testkit" % Version
   val `akka-actor-testkit-typed` = "com.typesafe.akka" %% "akka-actor-testkit-typed" % Version
@@ -167,6 +167,7 @@ object Akka {
 }
 
 object AkkaHttp {
-  val Version             = "10.1.8"
-  val `akka-http-testkit` = "com.typesafe.akka" %% "akka-http-testkit" % Version //ApacheV2
+  val Version                = "10.1.10"
+  val `akka-http-testkit`    = "com.typesafe.akka" %% "akka-http-testkit" % Version //ApacheV2
+  val `akka-http-spray-json` = "com.typesafe.akka" %% "akka-http-spray-json" % Version
 }

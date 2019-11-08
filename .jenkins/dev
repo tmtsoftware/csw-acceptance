@@ -1,6 +1,6 @@
 pipeline {
     options { timeout(time: 2, unit: 'HOURS') }
-    
+
     agent {
         label 'master'
     }
@@ -15,6 +15,12 @@ pipeline {
         stage('Acceptance Test') {
             steps {
                 sh "./run-all.sh"
+            }
+        }
+        stage('Multi-Jvm Test') {
+            steps {
+                sh "sbt clean csw-multi-jvm/multi-jvm:test"
+                sh "sbt clean aas/multi-jvm:test"
             }
         }
     }
@@ -48,10 +54,10 @@ def sendNotification(String buildStatus = 'STARTED') {
         color = 'RED'
         colorCode = '#FF0000'
         emailext(
-                    subject: subject,
-                    body: details,
-                    to: "tmt-csw@thoughtworks.com"
-            )
+                subject: subject,
+                body: details,
+                to: "tmt-csw@thoughtworks.com"
+        )
     }
 
     slackSend(channel: "#acceptance-dev", color: colorCode, message: summary)

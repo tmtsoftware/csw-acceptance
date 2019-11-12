@@ -1,7 +1,6 @@
 import com.typesafe.sbt.MultiJvmPlugin.autoImport._
 import com.typesafe.sbt.SbtMultiJvm
-import sbt.Keys.{artifacts, moduleName, packageBin, packagedArtifacts}
-import sbt.{Def, _}
+import sbt._
 import sbtassembly.AssemblyKeys._
 import sbtassembly.MergeStrategy
 

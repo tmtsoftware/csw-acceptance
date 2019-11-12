@@ -3,17 +3,15 @@ import sbt._
 object Libs {
   val ScalaVersion = "2.13.0"
 
-  val `scalatest` = "org.scalatest" %% "scalatest" % "3.0.8" //Apache License 2.0
-  val `junit`     = "junit"         % "junit"      % "4.12"  //Eclipse Public License 1.0
-//  val `junit-interface`          = "com.novocode"             % "junit-interface"           % "0.11" //BSD 2-clause "Simplified" License
-  val `mockito-scala` = "org.mockito" %% "mockito-scala" % "1.7.1"
-//  val `embedded-kafka`           = "io.github.embeddedkafka"  %% "embedded-kafka"           % "2.3.0"
+  val `scalatest`       = "org.scalatest"            %% "scalatest"      % "3.0.8" //Apache License 2.0
+  val `junit`           = "junit"                    % "junit"           % "4.12" //Eclipse Public License 1.0
+  val `mockito-scala`   = "org.mockito"              %% "mockito-scala"  % "1.7.1"
   val `embedded-redis`  = "com.github.kstyrc"        % "embedded-redis"  % "0.6"
   val `otj-pg-embedded` = "com.opentable.components" % "otj-pg-embedded" % "0.13.3"
   val `testng`          = "org.testng"               % "testng"          % "6.14.3"
   val `gson`            = "com.google.code.gson"     % "gson"            % "2.8.6" //Apache 2.0
 
-  val `embedded-keycloak`        = "com.github.tmtsoftware.embedded-keycloak" %% "embedded-keycloak"        % "0.1.6" //Apache 2.0
+  val `embedded-keycloak`        = "com.github.tmtsoftware.embedded-keycloak" %% "embedded-keycloak"        % "98a7c0b" //Apache 2.0
   val `akka-http-play-json`      = "de.heikoseeberger"                        %% "akka-http-play-json"      % "1.27.0" //Apache 2.0
   val `play-json-derived-codecs` = "org.julienrf"                             %% "play-json-derived-codecs" % "6.0.0"
 }

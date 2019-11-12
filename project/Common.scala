@@ -30,7 +30,7 @@ object Common extends AutoPlugin {
       //"-Xfatal-warnings",
       "-Xlint",
 //      "-Yno-adapted-args",
-      "-Ywarn-dead-code",
+      "-Ywarn-dead-code"
 //      "-Xfuture"
 //      "-Xprint:typer"
     ),

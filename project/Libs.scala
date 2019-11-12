@@ -12,7 +12,7 @@ object Libs {
   val `gson`            = "com.google.code.gson"     % "gson"            % "2.8.6" //Apache 2.0
 
   val `embedded-keycloak`        = "com.github.tmtsoftware.embedded-keycloak" %% "embedded-keycloak"        % "98a7c0b" //Apache 2.0
-  val `akka-http-play-json`      = "de.heikoseeberger"                        %% "akka-http-play-json"      % "1.27.0" //Apache 2.0
+  val `akka-http-play-json`      = "de.heikoseeberger"                        %% "akka-http-play-json"      % "1.29.1" //Apache 2.0
   val `play-json-derived-codecs` = "org.julienrf"                             %% "play-json-derived-codecs" % "6.0.0"
 }
 

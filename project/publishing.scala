@@ -2,7 +2,7 @@ import com.typesafe.sbt.packager.archetypes.JavaAppPackaging
 import sbt.Keys._
 import sbt._
 import sbtbuildinfo.BuildInfoPlugin
-import sbtbuildinfo.BuildInfoPlugin.autoImport.{buildInfoKeys, buildInfoPackage, BuildInfoKey}
+import sbtbuildinfo.BuildInfoPlugin.autoImport.{BuildInfoKey, buildInfoKeys, buildInfoPackage}
 
 object NoPublish extends AutoPlugin {
   override def requires: Plugins = plugins.JvmPlugin

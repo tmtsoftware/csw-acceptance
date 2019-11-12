@@ -11,6 +11,7 @@ object Common extends AutoPlugin {
   val detectCycles: SettingKey[Boolean] = settingKey[Boolean]("is cyclic check enabled?")
 
   override lazy val projectSettings: Seq[Setting[_]] = Seq(
+    dependencyOverrides += AkkaHttp.`akka-http-spray-json`,
     organization := "org.tmt",
     organizationName := "TMT Org",
     scalaVersion := Libs.ScalaVersion,
@@ -29,7 +30,7 @@ object Common extends AutoPlugin {
       //"-Xfatal-warnings",
       "-Xlint",
 //      "-Yno-adapted-args",
-      "-Ywarn-dead-code",
+      "-Ywarn-dead-code"
 //      "-Xfuture"
 //      "-Xprint:typer"
     ),

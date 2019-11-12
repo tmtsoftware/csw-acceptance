@@ -19,8 +19,8 @@ pipeline {
         }
         stage('Multi-Jvm Test') {
             steps {
-                sh "sbt csw-multi-jvm/multi-jvm:test"
-                sh "sbt aas/multi-jvm:test"
+                sh "sbt clean csw-multi-jvm/multi-jvm:test"
+                sh "sbt clean aas/multi-jvm:test"
             }
         }
     }

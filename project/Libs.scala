@@ -1,7 +1,7 @@
 import sbt._
 
 object Libs {
-  val ScalaVersion = "2.13.0"
+  val ScalaVersion = "2.13.1"
 
   val `scalatest`       = "org.scalatest"            %% "scalatest"      % "3.0.8" //Apache License 2.0
   val `junit`           = "junit"                    % "junit"           % "4.12" //Eclipse Public License 1.0

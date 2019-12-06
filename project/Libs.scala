@@ -5,7 +5,7 @@ object Libs {
 
   val `scalatest`       = "org.scalatest"            %% "scalatest"      % "3.0.8" //Apache License 2.0
   val `junit`           = "junit"                    % "junit"           % "4.12" //Eclipse Public License 1.0
-  val `mockito-scala`   = "org.mockito"              %% "mockito-scala"  % "1.7.1"
+  val `mockito-scala`   = "org.mockito"              %% "mockito-scala"  % "1.10.0"
   val `embedded-redis`  = "com.github.kstyrc"        % "embedded-redis"  % "0.6"
   val `otj-pg-embedded` = "com.opentable.components" % "otj-pg-embedded" % "0.13.3"
   val `testng`          = "org.testng"               % "testng"          % "6.14.3"

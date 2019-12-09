@@ -16,7 +16,8 @@ object Dependencies {
     AkkaHttp.`akka-http-testkit`,
     Libs.`testng`,
     CSW.`csw-commons-tests`,
-    Libs.`embedded-keycloak`
+    Libs.`embedded-keycloak`,
+    Libs.`msocket-impl-jvm`
   )
 
   val AllCswLibs: Seq[ModuleID] = Seq(

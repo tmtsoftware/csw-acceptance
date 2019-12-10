@@ -8,7 +8,7 @@ object Libs {
   val `mockito-scala`   = "org.mockito"              %% "mockito-scala"  % "1.7.1"
   val `embedded-redis`  = "com.github.kstyrc"        % "embedded-redis"  % "0.6"
   val `otj-pg-embedded` = "com.opentable.components" % "otj-pg-embedded" % "0.13.3"
-  val `testng`          = "org.testng"               % "testng"          % "6.14.3"
+  val `testng`          = "org.testng"               % "testng"          % "7.1.0"
   val `gson`            = "com.google.code.gson"     % "gson"            % "2.8.6" //Apache 2.0
 
   val `embedded-keycloak`        = "com.github.tmtsoftware.embedded-keycloak" %% "embedded-keycloak"        % "98a7c0b" //Apache 2.0

@@ -21,7 +21,7 @@ object Libs {
 object CSW {
   val Version: String = {
     val env = sys.env ++ sys.props
-    env.getOrElse("CSW_VERSION", "0.1-SNAPSHOT")
+    env.getOrElse("CSW_VERSION", "0.7.0")
   }
 
   //====================== Admin Server =======================
